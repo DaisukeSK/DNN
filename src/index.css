@@ -8,8 +8,8 @@ header {
   display: flex;
   justify-content: space-between;
   justify-content: center;
-  background: linear-gradient(rgb(255, 174, 0), rgb(251, 255, 35));
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: linear-gradient(rgb(255, 145, 0), rgb(251, 255, 35));
+  border-bottom: 2px solid rgb(255, 206, 101);
 }
 header h2 {
   font-size: 1.8rem;
@@ -119,6 +119,36 @@ main .formANDarticles .searchResult, main .formANDarticles article {
 main .formANDarticles .articleContainer {
   padding-bottom: 20px;
   box-sizing: border-box;
+}
+main .formANDarticles .articleContainer .unavailable {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 7px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+main .formANDarticles .articleContainer .unavailable .unavailableFlex {
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+main .formANDarticles .articleContainer .unavailable .unavailableFlex img {
+  width: 30px;
+  margin-right: 10px;
+}
+main .formANDarticles .articleContainer .unavailable .unavailableFlex h2 {
+  margin: 0;
+}
+main .formANDarticles .articleContainer .unavailable hr {
+  width: 90%;
+  margin: 10px auto;
+}
+main .formANDarticles .articleContainer .unavailable p {
+  font-size: 1.1em;
 }
 main .formANDarticles .articleContainer article {
   height: -moz-fit-content;

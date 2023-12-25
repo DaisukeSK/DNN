@@ -1,34 +1,30 @@
-import { useState, useEffect, useRef } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import 'dotenv/config'
-
-
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import dummy from './temp.json'
-
+import dummy from './temp.json';
 import Header from './components/Header';
-
-import altImg from '../public/altImg.png'
-import clockImg from '../public/clock.svg'
-// require('dotenv').config()
+import altImg from '../public/altImg.png';
+import clockImg from '../public/clock.svg';
+import exclamation from '../public/exclamation.png'
 
 function App() {
 
-
   const rgba=(bgColor)=>{
     let str=''
-    bgColor.split('').forEach(val=>{
+    bgColor.split('').forEach(c=>{
 
-          if(val=='b'){
-            str=str+val+'a'
+          // if(val=='b'){
+          //   str=str+val+'a'
     
-          }else if(val==')'){
-            str=str+', 0.5'+val
+          // }else if(val==')'){
+          //   str=str+', 0.5'+val
     
-          }else{
-            str+=val
-          }
+          // }else{
+          //   str+=val
+          // }
+          c=='b'?str=str+c+'a':
+          c==')'?str=str+', 0.5'+c:
+          str+=c
+
         })
         return `linear-gradient(${bgColor}, ${str} 150px)`
   
@@ -48,6 +44,7 @@ function App() {
   const [tagWidth,setTagWidth]=useState(tagWidthChange())
   const [mainBG,setMainBG]=useState()
   const [searchResult, setSearchResult] = useState([false,0])
+  const [APIunavailable, setAPIunavailable] = useState(false)
 
   const textRef=useRef()
   const orRef=useRef()
@@ -98,6 +95,7 @@ function App() {
         setSearchResult([true,res.data.articles.length])
       }
       setNews([...res.data.articles])
+      setAPIunavailable(false)
     })
     .catch((e)=>{
 
@@ -106,13 +104,22 @@ function App() {
       if(number<2){
 
         runAxios(number+1,category,lang,q,from,to,search)
+      }else{
+        setAPIunavailable(true)
       }
     });
   }
 
+  const setDummyArticles=(boolean,number)=>{
+    // setNews([...tempData])
+    // setSearchResult([boolean,number])
+    console.log(boolean,number)
+  }
+
   useEffect(()=>{
     
-    setNews([...tempData])
+    // setNews([...tempData])
+    setDummyArticles(false,0)
 
     // axios
     // .get(
@@ -221,10 +228,11 @@ function App() {
     console.log(query)
 
     
+    setDummyArticles(true,5)
+
     
-    
-    setNews([...tempData])
-    setSearchResult([true,7])
+    // setNews([...tempData])
+    // setSearchResult([true,7])
 
 
 
@@ -284,9 +292,10 @@ function App() {
     toRef.current.value=''
     fromRef.current.value=''
 
-    setSearchResult([false, 0])
+    setDummyArticles(false, 0)
+    // setSearchResult([false, 0])
     
-    setNews([...tempData])
+    // setNews([...tempData])
 
   //   axios
   //   .get(
@@ -376,7 +385,7 @@ function App() {
 {/* <div className='formANDarticles' style={{outline:`50px solid ${mainBG}`}}> */}
 
 {/* <div style={{position:'absolute', top:0,left:0}}>{APIkey}</div> */}
-
+{!APIunavailable &&
   <form onInput={(e)=>onchange(e)} onSubmit={(e)=>submitHandler(e)}>
       {/* <select name="category">
           <option value="general">general</option>
@@ -430,9 +439,22 @@ function App() {
         {/* <div onClick={(e)=>submitHandler(e)}>Submit</div> */}
 
   </form>
+        
+        }
   {searchResult[0] && <h3 className='searchResult'>{searchResult[1]>=10?'10+':searchResult[1]} article(s) found.</h3>}
   
       <div className='articleContainer'>
+
+        {APIunavailable &&
+        <div className='unavailable'>
+
+          <div className='unavailableFlex'><img src={exclamation}/><h2>Sorry...</h2></div>
+          <hr/>
+          <p>Due to limitation of API usage, News App is temporarily unavailable.<br/>
+          Please try again one day later.
+          </p>
+        </div>
+        }
 
   {news?.map((dt, key) => {
     return (

@@ -16,8 +16,8 @@ header {
     display: flex;
     justify-content: space-between;
     justify-content: center;
-    background: linear-gradient(rgb(255, 174, 0), rgb(251, 255, 35));
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: linear-gradient(rgb(255, 145, 0), rgb(251, 255, 35));
+    border-bottom: 2px solid rgb(255, 206, 101);
     h2 {
         font-size: 1.8rem;
         color: white;
@@ -203,6 +203,36 @@ main {
             // padding-left: 20px;
             // padding-right: 20px;
             box-sizing: border-box;
+
+            .unavailable {
+                width: fit-content;
+                background-color: white;
+                margin: 20px auto;
+                border-radius: 7px;
+                padding: 10px 30px;
+                box-sizing: border-box;
+                .unavailableFlex {
+                    display: flex;
+                    align-items: center;
+                    width: fit-content;
+                    margin: 0 auto;
+                    img {
+                        width: 30px;
+                        margin-right: 10px;
+                    }
+                    h2 {
+                        margin: 0;
+                    }
+                }
+                hr {
+                    width: 90%;
+                    margin: 10px auto;
+
+                }
+                p {
+                    font-size: 1.1em;
+                }
+            }
             
             article {
                 // width: 90%;
