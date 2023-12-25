@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+    padding: 0;
+    // background-color: black;
+    
+}
+
+// * {
+   
+//     font-family: 'Times New Roman', Times, serif;
+// }
+
+header {
+
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    background: linear-gradient(rgb(255, 174, 0), rgb(251, 255, 35));
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    h2 {
+        font-size: 1.8rem;
+        color: white;
+        text-shadow: rgb(255, 94, 0) 2px 2px 2px;
+    }
+}
+
+
+main {
+    // padding: 0 100px;
+    // box-sizing: border-box;
+    margin: 20px 7%;
+    
+    // padding-bottom: 120px;
+    
+    .tagFlex {
+        display: flex;
+        justify-content: space-between;
+        div {
+            // margin: 0 20px;
+            
+            // width: 100px;
+            border-radius: 7px 7px 0 0;
+            text-align: center;
+            // font-style: oblique;
+            
+            padding: 7px 0;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+            // border: 1px solid rgba(0, 0, 0, 0.2);
+            // border-bottom: none;
+            // font-family: arial;
+            // text-shadow: rgb(0, 0, 0) 2px 2px 3px;
+        }
+        // .general {
+        //     background-color: #FFBF00;
+        // }
+        // .world {
+        //     background-color: #15ff00;
+        // }
+        // .nation {
+        //     background-color: #00FFBF;
+        // }
+        // .business {
+        //     background-color: #ff00ff	;
+        // }
+        // .technology {
+        //     background-color: #0011ff;
+        // }
+        // .entertainment {
+        //     background-color: rgb(255, 75, 75);
+        // }
+        // .sports {
+        //     background-color: rgb(5, 165, 0);
+        // }
+        // .science {
+        //     background-color: rgb(204, 201, 0);
+        // }
+        // .health {
+        //     background-color: rgb(0, 255, 136);
+        // }
+        .general {
+            background-color: #ffbf00;
+        }
+        
+        .business {
+            background-color: #ff00ff	;
+        }
+        .technology {
+            background-color: #0011ff;
+        }
+        .entertainment {
+            background-color: rgb(255, 57, 57);
+        }
+        .sports {
+            background-color: rgb(0, 255, 13);
+            color: rgb(0, 194, 10);
+        }
+        .science {
+            background-color: rgb(255, 250, 0);
+            color: orange;
+        }
+        .health {
+            background-color: rgb(0, 255, 255);
+            color: rgb(0, 180, 255);
+        }
+    }
+    .formANDarticles {
+        position: relative;
+        border-radius: 0 0 7px 7px;
+        // background-color: cadetblue;
+        padding-top: 20px;
+        
+        form {
+            background-color: rgba(255, 255, 255, 1);
+            width: fit-content;
+            // display: block;
+            margin: 0 auto;
+            padding: 20px 30px 10px;
+            // outline: 1px solid rgba(100, 100, 100, 0.5);
+            border-radius: 7px;
+            .formFlex {
+                display: flex;
+                align-items: center;
+                // background-color: rgba(0, 0, 255, 0.3);
+                padding-bottom: 10px;
+                border-bottom: 1px dotted grey;
+                .operatorDiv, .fromDiv, .toDiv, .dash {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 20px;
+                    
+                }
+                .dash {
+                    // background-color: brown;
+                    width: 10px;
+                    height: 2px;
+                    border-bottom: 1px solid black;
+                }
+                .fromDiv, .toDiv {
+                    position: relative;
+                    label {
+                        position: absolute;
+                        top: -20px;
+                        left: 50%;
+
+                        transform: translateX(-50%);
+                        // margin: 0 auto;
+                    }
+                }
+            }
+
+            input[type="submit"] {
+        
+                display: block;
+                margin: 10px auto 0;
+                // background-image: url('../public/search.svg');
+                // background-repeat: no-repeat;
+                // background-size: 30px;
+                // background-position: left;
+
+                background: #eaeaea url('../public/search.svg') no-repeat;
+                background-size: 25px;
+                background-position-x: 5px;
+                // background-position: left;
+                background-position-y: center;
+
+                padding: 5px 15px;
+                border: none;
+                outline: 1px solid grey;
+                border-radius: 15px;
+                // color: white;
+
+                &:hover {
+                    background: #cdcdcd url('../public/search.svg') no-repeat;
+                    background-size: 25px;
+                    background-position-x: 5px;
+                    // background-position: left;
+                    background-position-y: center;
+                }
+                
+            }
+
+        }
+        .searchResult {
+            // width: fit-content;
+            
+            // background-color: white;
+            // color: white;
+        }
+
+        .searchResult, article {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .articleContainer {
+            // display: flex;
+            // justify-content: center;
+            // flex-wrap: wrap;
+            padding-bottom: 20px;
+            // padding-left: 20px;
+            // padding-right: 20px;
+            box-sizing: border-box;
+            
+            article {
+                // width: 90%;
+                height: fit-content;
+                // outline: 1px solid grey;
+                // margin: 20px auto;
+                padding: 10px 7% 20px;
+                box-sizing: border-box;
+                background-color: white;
+                outline: 3px solid transparent;
+                
+                &:hover {
+                    outline: 3px solid rgb(255, 146, 146);
+                    // background-color: rgb(186, 255, 232);
+                    transition: all .5s;
+                    
+                }
+                a {
+                    text-decoration: none;
+                    color: black;
+                    &:visited {
+                        color: black;
+                    }
+                    // display: flex;
+                    .date {
+                        display: flex;
+                        align-items: center;
+                        // margin-left: 10px;
+                        img {
+                            width: 20px;
+                            margin-right: 5px;
+                        }
+                    }
+                    h2 {
+                        text-decoration: underline;
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+                    .a_flex {
+                        // margin-right: 10px;
+                        display: flex;
+                        align-items: center;
+                        // background-color: #ff00ff;
+                        .pContainer {
+                            position: relative;
+                            // background-color: chocolate;
+
+                            p {
+                                margin: 0 20px 0 0;
+                                // height: 50px;
+                                font-size: 1.1em;
+                                
+                            }
+
+                            .readMore {
+
+                                display: flex;
+                                position: absolute;
+                                bottom: 0;
+                                width: 100%;
+                                height: 100px;
+                                background: linear-gradient(transparent,white);
+                                span {
+                                    width: 100%;
+                                    text-align: center;
+                                    align-self: flex-end;
+                                    font-size: 1.1em;
+                                    color: navy;
+
+                                }
+                            }
+                        }
+                        img {
+                            
+                            width: 300px;
+                            
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
