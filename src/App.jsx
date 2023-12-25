@@ -10,6 +10,7 @@ import dummy from './temp.json'
 import Header from './components/Header';
 
 import altImg from '../public/altImg.png'
+import clockImg from '../public/clock.svg'
 // require('dotenv').config()
 
 function App() {
@@ -441,7 +442,7 @@ function App() {
 
   <div className='date'>
 
-        <img src='../../public/clock.svg'/><div>{dt.publishedAt.split("T")[0]}&nbsp;|&nbsp;{dt.source.name}</div>
+        <img src={clockImg}/><div>{dt.publishedAt.split("T")[0]}&nbsp;|&nbsp;{dt.source.name}</div>
   </div>
         <h2>{dt.title}</h2>
 <div className='a_flex'>
