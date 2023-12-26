@@ -1,10 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, createContext } from 'react';
 import axios from 'axios';
 import dummy from './temp.json';
 import Header from './components/Header';
-import altImg from '../public/altImg.png';
-import clockImg from '../public/clock.svg';
-import exclamation from '../public/exclamation.png'
+import Article from './components/Article';
+import Form from './components/Form';
+import Unavailable from './components/Unavailable';
+// import altImg from '../public/altImg.png';
+// import clockImg from '../public/clock.svg';
+
+
+export const NewsCotext=createContext(null)
 
 function App() {
 
@@ -12,15 +17,6 @@ function App() {
     let str=''
     bgColor.split('').forEach(c=>{
 
-          // if(val=='b'){
-          //   str=str+val+'a'
-    
-          // }else if(val==')'){
-          //   str=str+', 0.5'+val
-    
-          // }else{
-          //   str+=val
-          // }
           c=='b'?str=str+c+'a':
           c==')'?str=str+', 0.5'+c:
           str+=c
@@ -46,6 +42,8 @@ function App() {
   const [searchResult, setSearchResult] = useState([false,0])
   const [APIunavailable, setAPIunavailable] = useState(false)
 
+
+
   const textRef=useRef()
   const orRef=useRef()
   const andRef=useRef()
@@ -53,9 +51,9 @@ function App() {
   const toRef=useRef()
 
 
-  const APIkey=import.meta.env.VITE_APIkey_2
-  const APIkey2=import.meta.env.VITE_APIkey_2
-  const APIkey3=import.meta.env.VITE_APIkey_3
+  // const APIkey=import.meta.env.VITE_APIkey_2
+  // const APIkey2=import.meta.env.VITE_APIkey_2
+  // const APIkey3=import.meta.env.VITE_APIkey_3
 
   const APIkeys=[
     import.meta.env.VITE_APIkey_1,
@@ -77,23 +75,26 @@ function App() {
   // const to='2023-12-20T05:59:52Z'
   // const sortby='relevance'
 
-  const search='example'
-  const category='general'
+  // const search='example'
+  // const category='general'
   const lang='en'
-  const country=''
-  const In='title'
-  const from=''
-  const to=''
-  const sortby='relevance'
+  // const country=''
+  // const In='title'
+  // const from=''
+  // const to=''
+  // const sortby='relevance'
   
   const runAxios=(number,category,lang,q,from,to,search)=>{
     axios
   .get(`https://gnews.io/api/v4/top-headlines?apikey=${APIkeys[number]}&category=${category}&lang=${lang}&q=${q}&from=${from}&to=${to}`)
     .then((res) => {
-      console.log("Used key number:",number+1)
-      if(search){
-        setSearchResult([true,res.data.articles.length])
-      }
+      console.log("API working in loop",number)
+      // if(search){
+      //   setSearchResult([true,res.data.articles.length])
+      // }else{
+      //   setSearchResult([false,0])
+      // }
+      search? setSearchResult([true,res.data.articles.length]) : setSearchResult([false,0]);
       setNews([...res.data.articles])
       setAPIunavailable(false)
     })
@@ -101,12 +102,14 @@ function App() {
 
       console.log("ERR in number",number)
       console.log("ERR",e)
-      if(number<2){
+      // if(number<2){
 
-        runAxios(number+1,category,lang,q,from,to,search)
-      }else{
-        setAPIunavailable(true)
-      }
+      //   runAxios(number+1,category,lang,q,from,to,search)
+      // }else{
+      //   setAPIunavailable(true)
+      // }
+      number<2? runAxios(number+1,category,lang,q,from,to,search) : setAPIunavailable(true)
+
     });
   }
 
@@ -168,96 +171,94 @@ function App() {
     
   },[])
 
-  const onchange=(e)=>{
-    console.log("change",e.target.name)
-    // console.log("Change",e.target.name,e.target.value)
-    if(e.target.name=='keyword'){
-      if(e.target.value==""){
-        setSearchTerm((prev)=>({...prev,keyword:[]}))
-        setMultiWord(false)
-      }else{
+  // const onchange=(e)=>{
+  //   console.log("change",e.target.name)
+  //   // console.log("Change",e.target.name,e.target.value)
+  //   if(e.target.name=='keyword'){
+  //     if(e.target.value==""){
+  //       setSearchTerm((prev)=>({...prev,keyword:[]}))
+  //       setMultiWord(false)
+  //     }else{
 
-      // console.log("length",e.target.value.split(" ")[0],e.target.value.split(" ")[1])
-                let terms=[]
-                e.target.value.split(" ").forEach((val,key)=>{
-                  // console.log(key,val)
-                  if(val){
-                    terms.push(val)
-                  }
-                })
-                if(e.target.value.split(" ")[0] && e.target.value.split(" ")[1]){
-                  setMultiWord(true)
-                }else{
-                  setMultiWord(false)
-                  // setSearchTerm((prev)=>({...prev,operator:null}))
-                }
-                  setSearchTerm((prev)=>({...prev,keyword:terms}))
-      }
-    }else if(e.target.name=='from'){
-      setSearchTerm((prev)=>({...prev,from:e.target.value+'T00:00:00Z'}))
-    }else if(e.target.name=='to'){
-      setSearchTerm((prev)=>({...prev,to:e.target.value+'T00:00:00Z'}))
-    }else if(e.target.name=='operator'){
-      setSearchTerm((prev)=>({...prev,operator:e.target.value}))
-    }
-  }
+  //     // console.log("length",e.target.value.split(" ")[0],e.target.value.split(" ")[1])
+  //               let terms=[]
+  //               e.target.value.split(" ").forEach((val,key)=>{
+  //                 // console.log(key,val)
+  //                 if(val){
+  //                   terms.push(val)
+  //                 }
+  //               })
+  //               if(e.target.value.split(" ")[0] && e.target.value.split(" ")[1]){
+  //                 setMultiWord(true)
+  //               }else{
+  //                 setMultiWord(false)
+  //                 // setSearchTerm((prev)=>({...prev,operator:null}))
+  //               }
+  //                 setSearchTerm((prev)=>({...prev,keyword:terms}))
+  //     }
+  //   }else if(e.target.name=='from'){
+  //     setSearchTerm((prev)=>({...prev,from:e.target.value+'T00:00:00Z'}))
+  //   }else if(e.target.name=='to'){
+  //     setSearchTerm((prev)=>({...prev,to:e.target.value+'T00:00:00Z'}))
+  //   }else if(e.target.name=='operator'){
+  //     setSearchTerm((prev)=>({...prev,operator:e.target.value}))
+  //   }
+  // }
 
-  useEffect(()=>{
-    // console.log(searchTerm)
-    // console.log(searchTerm[6])
-  },[searchTerm])
+  
 
   // console.log("News",news)
 
 
 
-  const submitHandler=(e)=>{
-    console.log("Submitted")
-    e.preventDefault()
+  // const submitHandler=(e)=>{
+  //   // console.log("Submitted")
+  //   e.preventDefault()
 
 
-    let query='';
-    searchTerm.keyword.forEach((t,key)=>{
-      console.log(key,t)
-      if(key==0){
-        query+=t
-      }else{
-        query+=` ${searchTerm.operator} ${t}`
-      }
-    })
-    console.log(query)
-
-    
-    setDummyArticles(true,5)
+  //   let query='';
+  //   searchTerm.keyword.forEach((t,key)=>{
+  //     // console.log(key,t)
+  //     // if(key==0){
+  //     //   query+=t
+  //     // }else{
+  //     //   query+=` ${searchTerm.operator} ${t}`
+  //     // }
+  //     key==0? query+=t : query+=` ${searchTerm.operator} ${t}`
+  //   })
+  //   console.log("query",query)
 
     
-    // setNews([...tempData])
-    // setSearchResult([true,7])
+  //   setDummyArticles(true,5)
+
+    
+  //   // setNews([...tempData])
+  //   // setSearchResult([true,7])
 
 
 
-    // axios
-    // .get(
-    //   `https://gnews.io/api/v4/top-headlines?
-    //   apikey=${APIkeys[0]}&
-    //   category=${searchTerm.category}&
-    //   lang=${lang}&
+  //   // axios
+  //   // .get(
+  //   //   `https://gnews.io/api/v4/top-headlines?
+  //   //   apikey=${APIkeys[0]}&
+  //   //   category=${searchTerm.category}&
+  //   //   lang=${lang}&
       
-    //   q=${query}&
-    //   from=${searchTerm.from}&
-    //   to=${searchTerm.to}
+  //   //   q=${query}&
+  //   //   from=${searchTerm.from}&
+  //   //   to=${searchTerm.to}
       
       
-    //   `)
-    //   .then((res) => {
-    //     console.log("submit",res.data.articles)
-    //     // console.log("API res",res.data.results)
-    //     setNews([...res.data.articles])
-    //     setSearchResult([true,res.data.articles.length])
-    //   });
+  //   //   `)
+  //   //   .then((res) => {
+  //   //     console.log("submit",res.data.articles)
+  //   //     // console.log("API res",res.data.results)
+  //   //     setNews([...res.data.articles])
+  //   //     setSearchResult([true,res.data.articles.length])
+  //   //   });
 
-      runAxios(0,searchTerm.category,lang,query,searchTerm.from,searchTerm.to,true)
-  }
+  //     runAxios(0,searchTerm.category,lang,query,searchTerm.from,searchTerm.to,true)
+  // }
 
   const clickTag=(e)=>{
 
@@ -318,10 +319,7 @@ function App() {
       runAxios(0,e.target.className,lang,'','','',false)
   }
 
-  useEffect(()=>{
-
-    // console.log(searchTerm)
-  },[searchTerm])
+  
 
   window.onresize=()=>{
     setTagWidth(tagWidthChange())
@@ -329,11 +327,12 @@ function App() {
 
   // console.log("jQuery",$("#root").css("width"))
 
+
   return (
-    <>
+    <NewsCotext.Provider value={{lang,textRef,orRef,andRef,fromRef,toRef,setSearchTerm,searchTerm,setMultiWord,multiWord,runAxios,setDummyArticles}}>
 
     
-<Header></Header>
+<Header/>
 
 
 
@@ -386,59 +385,61 @@ function App() {
 
 {/* <div style={{position:'absolute', top:0,left:0}}>{APIkey}</div> */}
 {!APIunavailable &&
-  <form onInput={(e)=>onchange(e)} onSubmit={(e)=>submitHandler(e)}>
-      {/* <select name="category">
-          <option value="general">general</option>
-          <option value="world">world</option>
-          <option value="nation">nation</option>
-          <option value="business">business</option>
-          <option value="technology">technology</option>
-          <option value="entertainment">entertainment</option>
-          <option value="sports">sports</option>
-          <option value="science">science</option>
-          <option value="health">health</option>
-      </select> */}
 
-      <div className='formFlex'>
+<Form/>
+  // <form onInput={(e)=>onchange(e)} onSubmit={(e)=>submitHandler(e)}>
+  //     {/* <select name="category">
+  //         <option value="general">general</option>
+  //         <option value="world">world</option>
+  //         <option value="nation">nation</option>
+  //         <option value="business">business</option>
+  //         <option value="technology">technology</option>
+  //         <option value="entertainment">entertainment</option>
+  //         <option value="sports">sports</option>
+  //         <option value="science">science</option>
+  //         <option value="health">health</option>
+  //     </select> */}
+
+  //     <div className='formFlex'>
 
 
-        <input name='keyword' type='text' placeholder=' Enter keyword.' ref={textRef}/>
+  //       <input name='keyword' type='text' placeholder=' Enter keyword.' ref={textRef}/>
 
-        <div className='operatorDiv'>
+  //       <div className='operatorDiv'>
 
-        <div className='orDiv'>
-      <input type="radio" name="operator" value="OR" disabled={!multiWord} defaultChecked ref={orRef}/>
-      <label style={{color:multiWord?'black':'grey'}}>&nbsp;OR</label>
+  //       <div className='orDiv'>
+  //     <input type="radio" name="operator" value="OR" disabled={!multiWord} defaultChecked ref={orRef}/>
+  //     <label style={{color:multiWord?'black':'grey'}}>&nbsp;OR</label>
 
-        </div>
-        <div className='andDiv'>
+  //       </div>
+  //       <div className='andDiv'>
 
-        <input type="radio" name="operator" value="AND" disabled={!multiWord} ref={andRef}/>
-        <label style={{color:multiWord?'black':'grey'}}>AND</label>
+  //       <input type="radio" name="operator" value="AND" disabled={!multiWord} ref={andRef}/>
+  //       <label style={{color:multiWord?'black':'grey'}}>AND</label>
 
-        </div>
+  //       </div>
 
-        </div>
+  //       </div>
 
-        <div className='fromDiv'>
+  //       <div className='fromDiv'>
 
-        <label>From</label>
-        <input name="from" type="date" ref={fromRef}/>
-        </div>
+  //       <label>From</label>
+  //       <input name="from" type="date" ref={fromRef}/>
+  //       </div>
 
-        <div className='dash'></div>
+  //       <div className='dash'></div>
 
-        <div className='toDiv'>
-        <label>To</label>
-        <input name="to" type="date" ref={toRef}/>
+  //       <div className='toDiv'>
+  //       <label>To</label>
+  //       <input name="to" type="date" ref={toRef}/>
 
-        </div>
-      </div>
+  //       </div>
+  //     </div>
 
-        <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Search"></input>
-        {/* <div onClick={(e)=>submitHandler(e)}>Submit</div> */}
+  //       <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Search"></input>
+  //       {/* <div onClick={(e)=>submitHandler(e)}>Submit</div> */}
 
-  </form>
+  // </form>
         
         }
   {searchResult[0] && <h3 className='searchResult'>{searchResult[1]>=10?'10+':searchResult[1]} article(s) found.</h3>}
@@ -446,48 +447,42 @@ function App() {
       <div className='articleContainer'>
 
         {APIunavailable &&
-        <div className='unavailable'>
-
-          <div className='unavailableFlex'><img src={exclamation}/><h2>Sorry...</h2></div>
-          <hr/>
-          <p>Due to limitation of API usage, News App is temporarily unavailable.<br/>
-          Please try again one day later.
-          </p>
-        </div>
+        <Unavailable/>
         }
 
   {news?.map((dt, key) => {
     return (
-      <article key={key}>
+      <Article key={key} article={dt}/>
+//       <article key={key}>
         
-        <a href={dt.url} target='_blank'>
+//         <a href={dt.url} target='_blank'>
 
-  <div className='date'>
+//   <div className='date'>
 
-        <img src={clockImg}/><div>{dt.publishedAt.split("T")[0]}&nbsp;|&nbsp;{dt.source.name}</div>
-  </div>
-        <h2>{dt.title}</h2>
-<div className='a_flex'>
-<div className='pContainer'>
-{/* <p>{dt.content}</p> */}
-{/* <p>{dt.content.split(`... [${/[0-9]{1,4}/} chars]`)[0]}</p> */}
-{/* <p>{dt.content.split(/\.\.\.\s\[\d{1,4}\s/)[0]}</p> */}
-<p>{dt.content.split(/...\s\[\d{1,4}\schars]/)[0]+'...'}</p>
-{/* <p>{dt.content}</p> */}
+//         <img src={clockImg}/><div>{dt.publishedAt.split("T")[0]}&nbsp;|&nbsp;{dt.source.name}</div>
+//   </div>
+//         <h2>{dt.title}</h2>
+// <div className='a_flex'>
+// <div className='pContainer'>
+// {/* <p>{dt.content}</p> */}
+// {/* <p>{dt.content.split(`... [${/[0-9]{1,4}/} chars]`)[0]}</p> */}
+// {/* <p>{dt.content.split(/\.\.\.\s\[\d{1,4}\s/)[0]}</p> */}
+// <p>{dt.content.split(/...\s\[\d{1,4}\schars]/)[0]+'...'}</p>
+// {/* <p>{dt.content}</p> */}
 
-  <div className='readMore'><span>Read more [External website]</span></div>
-</div>
+//   <div className='readMore'><span>Read more [External website]</span></div>
+// </div>
 
-        <img src={dt.image} onError=
-{(e)=>{$(e.target).attr('src',altImg)}}/>
+//         <img src={dt.image} onError=
+// {(e)=>{$(e.target).attr('src',altImg)}}/>
 
-{/* <img src={altImg}/> */}
+// {/* <img src={altImg}/> */}
 
-</div>
+// </div>
 
-        </a>
+//         </a>
       
-      </article>
+//       </article>
     );
   })}
 
@@ -499,7 +494,7 @@ function App() {
 
 
       
-    </>
+    </NewsCotext.Provider>
   )
 }
 

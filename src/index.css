@@ -33,7 +33,7 @@ main .tagFlex div {
   font-size: 1.2em;
 }
 main .tagFlex .general {
-  background-color: #ffbf00;
+  background-color: #ffa600;
 }
 main .tagFlex .business {
   background-color: #ff00ff;
@@ -46,7 +46,6 @@ main .tagFlex .entertainment {
 }
 main .tagFlex .sports {
   background-color: rgb(0, 255, 13);
-  color: rgb(0, 194, 10);
 }
 main .tagFlex .science {
   background-color: rgb(255, 250, 0);
@@ -54,7 +53,7 @@ main .tagFlex .science {
 }
 main .tagFlex .health {
   background-color: rgb(0, 255, 255);
-  color: rgb(0, 180, 255);
+  color: rgb(0, 140, 255);
 }
 main .formANDarticles {
   position: relative;
@@ -155,12 +154,7 @@ main .formANDarticles .articleContainer article {
   height: fit-content;
   padding: 10px 7% 20px;
   box-sizing: border-box;
-  background-color: white;
   outline: 3px solid transparent;
-}
-main .formANDarticles .articleContainer article:hover {
-  outline: 3px solid rgb(255, 146, 146);
-  transition: all 0.5s;
 }
 main .formANDarticles .articleContainer article a {
   text-decoration: none;
@@ -199,7 +193,6 @@ main .formANDarticles .articleContainer article a .a_flex .pContainer .readMore 
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: linear-gradient(transparent, white);
 }
 main .formANDarticles .articleContainer article a .a_flex .pContainer .readMore span {
   width: 100%;
