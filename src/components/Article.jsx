@@ -13,7 +13,7 @@ function Article(props) {
   return (
     <article
     style={{backgroundColor:bg}}
-    onMouseEnter={()=>setBg('lightblue')}
+    onMouseEnter={()=>setBg('#D4EBF2')}
     onMouseLeave={()=>setBg('#FFFFFF')}
     >
         
