@@ -153,6 +153,7 @@ function App() {
   }
 
   useEffect(()=>{
+    console.log("TS ver.")
     setTempData(dummy.dummy)
     // setNews([...tempData])
     setDummyArticles(false,0)
