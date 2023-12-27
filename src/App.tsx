@@ -74,6 +74,7 @@ function App() {
   const [APIunavailable, setAPIunavailable] = useState<boolean>(false)
 
 
+  setTempData(dummy.dummy)
 
   const textRef=useRef<HTMLInputElement>(null)
   const orRef=useRef<HTMLInputElement>(null)
