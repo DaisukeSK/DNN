@@ -384,6 +384,10 @@ function App() {
 {/* <div className='formANDarticles' style={{outline:`50px solid ${mainBG}`}}> */}
 
 {/* <div style={{position:'absolute', top:0,left:0}}>{APIkey}</div> */}
+
+{APIunavailable &&
+        <Unavailable/>
+        }
 {!APIunavailable &&
 
 <Form/>
@@ -442,15 +446,13 @@ function App() {
   // </form>
         
         }
-  {searchResult[0] && <h3 className='searchResult'>{searchResult[1]>=10?'10+':searchResult[1]} article(s) found.</h3>}
+  {!APIunavailable && searchResult[0] && <h3 className='searchResult'>{searchResult[1]>=10?'10+':searchResult[1]} article(s) found.</h3>}
   
       <div className='articleContainer'>
 
-        {APIunavailable &&
-        <Unavailable/>
-        }
+        
 
-  {news?.map((dt, key) => {
+  {!APIunavailable && news?.map((dt, key) => {
     return (
       <Article key={key} article={dt}/>
 //       <article key={key}>

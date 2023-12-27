@@ -60,6 +60,36 @@ main .formANDarticles {
   border-radius: 0 0 7px 7px;
   padding-top: 20px;
 }
+main .formANDarticles .unavailable {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 7px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+main .formANDarticles .unavailable .unavailableFlex {
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+main .formANDarticles .unavailable .unavailableFlex img {
+  width: 30px;
+  margin-right: 10px;
+}
+main .formANDarticles .unavailable .unavailableFlex h2 {
+  margin: 0;
+}
+main .formANDarticles .unavailable hr {
+  width: 90%;
+  margin: 10px auto;
+}
+main .formANDarticles .unavailable p {
+  font-size: 1.1em;
+}
 main .formANDarticles form {
   background-color: rgb(255, 255, 255);
   width: -moz-fit-content;
@@ -118,36 +148,6 @@ main .formANDarticles .searchResult, main .formANDarticles article {
 main .formANDarticles .articleContainer {
   padding-bottom: 20px;
   box-sizing: border-box;
-}
-main .formANDarticles .articleContainer .unavailable {
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: white;
-  margin: 20px auto;
-  border-radius: 7px;
-  padding: 10px 30px;
-  box-sizing: border-box;
-}
-main .formANDarticles .articleContainer .unavailable .unavailableFlex {
-  display: flex;
-  align-items: center;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-}
-main .formANDarticles .articleContainer .unavailable .unavailableFlex img {
-  width: 30px;
-  margin-right: 10px;
-}
-main .formANDarticles .articleContainer .unavailable .unavailableFlex h2 {
-  margin: 0;
-}
-main .formANDarticles .articleContainer .unavailable hr {
-  width: 90%;
-  margin: 10px auto;
-}
-main .formANDarticles .articleContainer .unavailable p {
-  font-size: 1.1em;
 }
 main .formANDarticles .articleContainer article {
   height: -moz-fit-content;
