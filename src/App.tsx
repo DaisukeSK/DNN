@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, createContext } from 'react';
+import { useState, useEffect, useRef, createContext, RefObject } from 'react';
 import axios from 'axios';
 import dummy from './temp.json';
 import Header from './components/Header';
@@ -8,12 +8,43 @@ import Unavailable from './components/Unavailable';
 // import altImg from '../public/altImg.png';
 // import clockImg from '../public/clock.svg';
 
+export type NewsArticle={
+  content:string,
+  description:string,
+  image:string,
+  publishedAt:string,
+  source:{name:string,url:string},
+  title:string,
+  url:string
 
-export const NewsCotext=createContext(null)
+}
+
+export type SearchTerm ={
+  keyword:string[],from:string,to:string,category:string,operator:string
+
+}
+
+type NewsContextValues={
+  lang:string,
+  textRef:RefObject<HTMLInputElement>,
+  orRef:RefObject<HTMLInputElement>,
+  andRef:RefObject<HTMLInputElement>,
+  fromRef:RefObject<HTMLInputElement>,
+  toRef:RefObject<HTMLInputElement>,
+  setSearchTerm:(state:SearchTerm)=>void,
+  searchTerm:SearchTerm,
+  setMultiWord:(state:boolean)=>void,
+  multiWord:boolean,
+  runAxios:(number:number,category:string,lang:string,q:string,from:string,to:string,search:boolean)=>void,
+  setDummyArticles:any
+}
+
+
+export const NewsCotext=createContext<NewsContextValues>({} as NewsContextValues)
 
 function App() {
 
-  const rgba=(bgColor)=>{
+  const rgba=(bgColor:string):string=> {
     let str=''
     bgColor.split('').forEach(c=>{
 
@@ -26,29 +57,29 @@ function App() {
   
   }
 
-  const tagWidthChange=()=>{
+  const tagWidthChange=():number=>{
     return window.innerWidth*0.86/7-7
   }
 
 
   
-  const [news, setNews] = useState()
-  const [searchTerm, setSearchTerm] = useState({keyword:[],from:'',to:'',category:'general',operator:'OR'})
+  const [news, setNews] = useState<Array<NewsArticle>>()
+  const [searchTerm, setSearchTerm] = useState<SearchTerm>({keyword:[],from:'',to:'',category:'general',operator:'OR'})
 
-  const [multiWord, setMultiWord] =useState(false)
+  const [multiWord, setMultiWord] =useState<boolean>(false)
   const [tempData, setTempData] =useState(dummy.dummy)
-  const [tagWidth,setTagWidth]=useState(tagWidthChange())
-  const [mainBG,setMainBG]=useState()
-  const [searchResult, setSearchResult] = useState([false,0])
-  const [APIunavailable, setAPIunavailable] = useState(false)
+  const [tagWidth,setTagWidth]=useState<number>(tagWidthChange())
+  const [mainBG,setMainBG]=useState<string>()
+  const [searchResult, setSearchResult] = useState<[boolean,number]>([false,0])
+  const [APIunavailable, setAPIunavailable] = useState<boolean>(false)
 
 
 
-  const textRef=useRef()
-  const orRef=useRef()
-  const andRef=useRef()
-  const fromRef=useRef()
-  const toRef=useRef()
+  const textRef=useRef<HTMLInputElement>(null)
+  const orRef=useRef<HTMLInputElement>(null)
+  const andRef=useRef<HTMLInputElement>(null)
+  const fromRef=useRef<HTMLInputElement>(null)
+  const toRef=useRef<HTMLInputElement>(null)
 
 
   // const APIkey=import.meta.env.VITE_APIkey_2
@@ -77,18 +108,19 @@ function App() {
 
   // const search='example'
   // const category='general'
-  const lang='en'
+  const lang:string='en'
   // const country=''
   // const In='title'
   // const from=''
   // const to=''
   // const sortby='relevance'
   
-  const runAxios=(number,category,lang,q,from,to,search)=>{
+  const runAxios=(number:number,category:string,lang:string,q:string,from:string,to:string,search:boolean):void=>{
     axios
   .get(`https://gnews.io/api/v4/top-headlines?apikey=${APIkeys[number]}&category=${category}&lang=${lang}&q=${q}&from=${from}&to=${to}`)
     .then((res) => {
       console.log("API working in loop",number)
+      // console.log("res",res.data.articles)
       // if(search){
       //   setSearchResult([true,res.data.articles.length])
       // }else{
@@ -113,9 +145,9 @@ function App() {
     });
   }
 
-  const setDummyArticles=(boolean,number)=>{
-    // setNews([...tempData])
-    // setSearchResult([boolean,number])
+  const setDummyArticles=(boolean:boolean,number:number)=>{
+    setNews([...tempData])
+    setSearchResult([boolean,number])
     console.log(boolean,number)
   }
 
@@ -260,7 +292,8 @@ function App() {
   //     runAxios(0,searchTerm.category,lang,query,searchTerm.from,searchTerm.to,true)
   // }
 
-  const clickTag=(e)=>{
+  
+  const clickTag=(e:React.MouseEvent<HTMLDivElement>):void=>{
 
     // console.log("clicked", $(e.target).css("background-color"))
     
@@ -281,17 +314,20 @@ function App() {
 
     // setMainBG($(e.target).css("background-color"))
     // setMainBG(`linear-gradient(${$(e.target).css("background-color")}, ${rgba} 100px)`)
-    setMainBG(rgba($(e.target).css("background-color")))
-    setSearchTerm({keyword:[],from:'',to:'',category:e.target.className,operator:'OR'})
 
-    textRef.current.value=''
-    orRef.current.checked=true
-    andRef.current.checked=false
+    const Event=e.target as HTMLDivElement
+
+    setMainBG(rgba($(e.target).css("background-color")))
+    setSearchTerm({keyword:[],from:'',to:'',category:Event.className,operator:'OR'})
+
+    textRef.current!.value=''
+    orRef.current!.checked=true
+    andRef.current!.checked=false
     // orRef.current.disabled=true
     // andRef.current.disabled=true
     setMultiWord(false)
-    toRef.current.value=''
-    fromRef.current.value=''
+    toRef.current!.value=''
+    fromRef.current!.value=''
 
     setDummyArticles(false, 0)
     // setSearchResult([false, 0])
@@ -316,7 +352,7 @@ function App() {
   //       setNews([...res.data.articles])
   //     });
 
-      runAxios(0,e.target.className,lang,'','','',false)
+      runAxios(0,Event.className,lang,'','','',false)
   }
 
   
@@ -452,7 +488,7 @@ function App() {
 
         
 
-  {!APIunavailable && news?.map((dt, key) => {
+  {!APIunavailable && news?.map((dt:NewsArticle, key:number) => {
     return (
       <Article key={key} article={dt}/>
 //       <article key={key}>

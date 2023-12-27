@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { NewsCotext } from '../App'
 
 
@@ -7,48 +7,52 @@ function Form() {
 
   const {lang,textRef,orRef,andRef,fromRef,toRef,setSearchTerm,searchTerm,setMultiWord,multiWord,runAxios,setDummyArticles} =useContext(NewsCotext)
   
+  
 
-  const onchange=(e)=>{
-    console.log("change",e.target.name)
+  const onchange=(e:React.FormEvent<HTMLFormElement>):void=>{
+
+    const Event=e.target as HTMLFormElement
+    console.log("change",Event.name)
     // console.log("Change",e.target.name,e.target.value)
-    if(e.target.name=='keyword'){
-      if(e.target.value==""){
-        setSearchTerm((prev)=>({...prev,keyword:[]}))
+    if(Event.name=='keyword'){
+      if(Event.value==""){
+        // setSearchTerm((prev:SearchTerm)=>({...prev,keyword:[]}))
+        setSearchTerm({...searchTerm,keyword:[]})
         setMultiWord(false)
       }else{
 
       // console.log("length",e.target.value.split(" ")[0],e.target.value.split(" ")[1])
-                let terms=[]
-                e.target.value.split(" ").forEach((val,key)=>{
+                let terms:string[]=[]
+                Event.value.split(" ").forEach((val:string)=>{
                   // console.log(key,val)
                   if(val){
                     terms.push(val)
                   }
                 })
-                if(e.target.value.split(" ")[0] && e.target.value.split(" ")[1]){
+                if(Event.value.split(" ")[0] && Event.value.split(" ")[1]){
                   setMultiWord(true)
                 }else{
                   setMultiWord(false)
                   // setSearchTerm((prev)=>({...prev,operator:null}))
                 }
-                  setSearchTerm((prev)=>({...prev,keyword:terms}))
+                  setSearchTerm({...searchTerm,keyword:terms})
       }
-    }else if(e.target.name=='from'){
-      setSearchTerm((prev)=>({...prev,from:e.target.value+'T00:00:00Z'}))
-    }else if(e.target.name=='to'){
-      setSearchTerm((prev)=>({...prev,to:e.target.value+'T00:00:00Z'}))
-    }else if(e.target.name=='operator'){
-      setSearchTerm((prev)=>({...prev,operator:e.target.value}))
+    }else if(Event.name=='from'){
+      setSearchTerm({...searchTerm,from:Event.value+'T00:00:00Z'})
+    }else if(Event.name=='to'){
+      setSearchTerm({...searchTerm,to:Event.value+'T00:00:00Z'})
+    }else if(Event.name=='operator'){
+      setSearchTerm({...searchTerm,operator:Event.value})
     }
   }
 
-  const submitHandler=(e)=>{
+  const submitHandler=(e:React.FormEvent<HTMLFormElement>):void=>{
     // console.log("Submitted")
     e.preventDefault()
 
 
     let query='';
-    searchTerm.keyword.forEach((t,key)=>{
+    searchTerm.keyword.forEach((t:string,key:number)=>{
       // console.log(key,t)
       // if(key==0){
       //   query+=t
@@ -90,6 +94,10 @@ function Form() {
 
       runAxios(0,searchTerm.category,lang,query,searchTerm.from,searchTerm.to,true)
   }
+
+  useEffect(()=>{
+    // console.log("ST",searchTerm)
+  },[searchTerm])
   
   return (
     <form onInput={(e)=>onchange(e)} onSubmit={(e)=>submitHandler(e)}>

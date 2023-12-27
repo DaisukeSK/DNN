@@ -1,10 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
-
-
 
 function Header() {
-  
-  const [news, setNews] = useState()
   
   return (
     <header>
