@@ -74,7 +74,7 @@ function App() {
   const [APIunavailable, setAPIunavailable] = useState<boolean>(false)
 
 
-  setTempData(dummy.dummy)
+  
 
   const textRef=useRef<HTMLInputElement>(null)
   const orRef=useRef<HTMLInputElement>(null)
@@ -153,7 +153,7 @@ function App() {
   }
 
   useEffect(()=>{
-    
+    setTempData(dummy.dummy)
     // setNews([...tempData])
     setDummyArticles(false,0)
 
