@@ -1,17 +1,9 @@
-
 function Header() {
-  
   return (
     <header>
-
-  
-  <h2>News App</h2>
-  {/* <div>aa</div> */}
-      
+      <h2>News App</h2>
     </header>
   )
-}
+};
 
-export default Header
-
-
+export default Header;

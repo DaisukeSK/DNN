@@ -24,7 +24,7 @@ main .tagFlex {
   display: flex;
   justify-content: space-between;
 }
-main .tagFlex div {
+main .tagFlex > div {
   border-radius: 7px 7px 0 0;
   text-align: center;
   padding: 7px 0;
