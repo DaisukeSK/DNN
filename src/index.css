@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #FFFFFF;
 }
 
 header {
@@ -25,12 +26,20 @@ main .tagFlex {
   justify-content: space-between;
 }
 main .tagFlex > div {
-  border-radius: 7px 7px 0 0;
+  border-radius: 0 5px 0 0;
+  width: 100%;
   text-align: center;
   padding: 7px 0;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.2em;
+  position: relative;
+}
+main .tagFlex > div svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #FFFFFF;
 }
 main .tagFlex .general {
   background-color: #ffa600;

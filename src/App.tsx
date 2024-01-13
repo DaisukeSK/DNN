@@ -61,9 +61,9 @@ function App() {
     return `linear-gradient(${bgColor}, ${str} 150px)`;
   };
 
-  const tagWidthChange=():number=>{
-    return window.innerWidth*0.86/7-7;
-  };
+  // const tagWidthChange=():number=>{
+  //   return window.innerWidth*0.86/7-2;
+  // };
 
   const [news, setNews] = useState<Array<NewsArticle>>();
   const [searchTerm, setSearchTerm] = useState<SearchTerm>({
@@ -74,7 +74,7 @@ function App() {
       operator: 'OR'
     });
   const [multiWord, setMultiWord] = useState<boolean>(false);
-  const [tagWidth, setTagWidth] = useState<number>(tagWidthChange());
+  // const [tagWidth, setTagWidth] = useState<number>(tagWidthChange());
   const [mainBG, setMainBG] = useState<string>();
   const [searchResult, setSearchResult] = useState<[boolean,number]>([false,0]);
   const [APIunavailable, setAPIunavailable] = useState<boolean>(false);
@@ -159,7 +159,7 @@ function App() {
   };
 
   window.onresize=():void=>{
-    setTagWidth(tagWidthChange());
+    // setTagWidth(tagWidthChange());
   };
 
   return (
@@ -185,9 +185,12 @@ function App() {
               <div
                 key={key}
                 className={tag}
-                style={{width:`${tagWidth}px`}}
+                // style={{width:`${tagWidth}px`}}
                 onClick={(e)=>clickTag(e)}
               >
+                <svg width='15' height='15'>
+                  <path d='m0 0 h15 l-15 15Z'/>
+                </svg>
                 {tag.split('').map((t:string, key:number):string=>{
                   return key==0? t.toUpperCase():t
                 })}
