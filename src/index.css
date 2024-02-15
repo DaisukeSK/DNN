@@ -68,7 +68,7 @@ main .tagFlex .health {
 main .formANDarticles {
   position: relative;
   border-radius: 0 0 7px 7px;
-  padding-top: 20px;
+  padding: 20px 0 5px;
 }
 main .formANDarticles .unavailable {
   width: -moz-fit-content;
