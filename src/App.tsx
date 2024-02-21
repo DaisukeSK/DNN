@@ -2,7 +2,8 @@ import { useState, useEffect, useRef, createContext, RefObject } from 'react';
 import axios from 'axios';
 import dummy from './dummy.json';
 import Header from './components/Header';
-import Article from './components/Article';
+import ListedArticle from './components/Article/ListedArticle';
+import ThumbnailedArticle from './components/Article/ThumbnailedArticle';
 import Form from './components/Form';
 import Unavailable from './components/Unavailable';
 
@@ -78,6 +79,7 @@ function App() {
   const [mainBG, setMainBG] = useState<string>();
   const [searchResult, setSearchResult] = useState<[boolean,number]>([false,0]);
   const [APIunavailable, setAPIunavailable] = useState<boolean>(false);
+  const [displayList, setDisplayList] = useState<boolean>(true);
 
   const dummyArticle=[...dummy.data];
   console.log("dummyArticle",dummyArticle);
@@ -209,9 +211,14 @@ function App() {
               {searchResult[0] &&
                 <h3 className='searchResult'>{searchResult[1]>=10?'10+':searchResult[1]} article(s) found.</h3>
               }
+              <div className='switchDisplay'>
+              <div onClick={()=>setDisplayList(true)}>List</div>|<div onClick={()=>setDisplayList(false)}>Thumbnail</div>
+              </div>
               <div className='articleContainer'>
                 {news?.map((dt:NewsArticle, key:number) =>{
-                  return <Article key={key} article={dt}/>
+                  return displayList?
+                  <ListedArticle key={key} article={dt}/>
+                  :key<=8 && <ThumbnailedArticle key={key} article={dt}/>
                 })}
               </div>
             </>

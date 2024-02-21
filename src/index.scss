@@ -153,10 +153,16 @@ main {
             width: 90%;
             margin: 20px auto;
         }
+        .switchDisplay {
+            display: flex;
+        }
         .articleContainer {
             padding-bottom: 20px;
             box-sizing: border-box;
-            article {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .listedArticle {
                 height: fit-content;
                 padding: 10px 7% 20px;
                 box-sizing: border-box;
@@ -208,6 +214,28 @@ main {
                             width: 300px;
                             object-fit: contain;
                         }
+                    }
+                }
+            }
+
+
+            .thumbnailedArticle {
+                width: 25%;
+                height: 25Vh;
+                overflow: hidden;
+                margin: 20px;
+                a {
+                    display: block;
+                    position: relative;
+                    h2 {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    img {
+                        max-width: 100%;
+                        // max-height: 100%;
+                        display: block;
                     }
                 }
             }
