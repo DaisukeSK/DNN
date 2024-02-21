@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import altImg from '../../../public/altImg.png';
-import clockImg from '../../../public/clock.svg';
+// import clockImg from '../../../public/clock.svg';
 import { NewsArticle } from '../../App';
 
 type Props={
