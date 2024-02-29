@@ -1,28 +1,208 @@
 body {
-  font-family: "Times New Roman", Times, Arial, serif;
+  font-family: "Helvetica", Arial, serif;
   margin: 0;
   padding: 0;
   background-color: #FFFFFF;
+  margin-top: 100px;
+  position: relative;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+.date img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3843137255);
+  z-index: 1;
+}
+@keyframes spinnin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.loading div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border: 17px solid rgb(204, 204, 204);
+  border-bottom: 17px solid rgb(123, 136, 255);
+  border-top: 17px solid rgb(123, 136, 255);
+  border-radius: 50%;
+  animation-name: spinnin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 header {
   padding: 0 30px;
   display: flex;
   justify-content: space-between;
-  justify-content: center;
+  justify-content: space-between;
   background: linear-gradient(rgb(255, 145, 0), rgb(251, 255, 35));
-  border-bottom: 2px solid rgb(255, 206, 101);
+  background: #000000;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
-header h2 {
-  font-size: 1.8rem;
-  color: white;
-  text-shadow: rgb(255, 94, 0) 2px 2px 2px;
+header .tagFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .tagFlex > div {
+  cursor: pointer;
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+header .logo {
+  width: 7%;
+  cursor: pointer;
+}
+header form {
+  display: flex;
+  align-items: center;
+}
+header form input[type=text]:focus {
+  outline: none;
+}
+header form input[type=submit] {
+  height: 25px;
+  margin-left: 5px;
+  background: rgb(71, 104, 143) url("../public/search2.svg") no-repeat;
+  background-size: 25px;
+  background-position: center;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+}
+header form input[type=submit]:hover {
+  background: rgb(44, 67, 94) url("../public/search2.svg") no-repeat;
+  background-size: 25px;
+  background-position: center;
+}
+header form div {
+  position: relative;
+  font-size: 0.9em;
+  margin-left: 5px;
+  color: #ffffff;
+  z-index: 2;
+}
+header form div span {
+  position: relative;
+  left: 100px;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+header form div span:hover {
+  text-decoration: underline;
+}
+header form div:hover {
+  color: #ffa600;
+}
+header form div:hover span {
+  left: 0;
+  opacity: 1;
+}
+
+.coverPageBG {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5764705882);
+  z-index: 1;
+}
+
+.detailedSearch {
+  background-color: rgb(255, 255, 255);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px 30px 10px;
+  border-radius: 7px;
+  border: 1px solid grey;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.detailedSearch .x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.detailedSearch .formFlex {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted grey;
+}
+.detailedSearch .formFlex .operatorDiv, .detailedSearch .formFlex .fromDiv, .detailedSearch .formFlex .toDiv, .detailedSearch .formFlex .dash {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.detailedSearch .formFlex .dash {
+  width: 10px;
+  height: 2px;
+  border-bottom: 1px solid black;
+}
+.detailedSearch .formFlex .fromDiv, .detailedSearch .formFlex .toDiv {
+  position: relative;
+}
+.detailedSearch .formFlex .fromDiv label, .detailedSearch .formFlex .toDiv label {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.detailedSearch input[type=submit] {
+  display: block;
+  margin: 10px auto 0;
+  background: #eaeaea url("../public/search.svg") no-repeat;
+  background-size: 25px;
+  background-position-x: 5px;
+  background-position-y: center;
+  padding: 5px 15px;
+  border: none;
+  outline: 1px solid grey;
+  border-radius: 15px;
+}
+.detailedSearch input[type=submit]:hover {
+  background: #cdcdcd url("../public/search.svg") no-repeat;
+  background-size: 25px;
+  background-position-x: 5px;
+  background-position-y: center;
 }
 
 main {
-  margin: 20px 7%;
+  margin: 20px 0%;
+  position: relative;
+}
+main h1 {
+  margin-left: 5%;
 }
 main .tagFlex {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -41,29 +221,6 @@ main .tagFlex > div svg {
   top: 0;
   left: 0;
   fill: #FFFFFF;
-}
-main .tagFlex .general {
-  background-color: #ffa600;
-}
-main .tagFlex .business {
-  background-color: #ff00ff;
-}
-main .tagFlex .technology {
-  background-color: #0011ff;
-}
-main .tagFlex .entertainment {
-  background-color: rgb(255, 57, 57);
-}
-main .tagFlex .sports {
-  background-color: rgb(0, 255, 13);
-}
-main .tagFlex .science {
-  background-color: rgb(255, 250, 0);
-  color: orange;
-}
-main .tagFlex .health {
-  background-color: rgb(0, 255, 255);
-  color: rgb(0, 140, 255);
 }
 main .formANDarticles {
   position: relative;
@@ -100,63 +257,33 @@ main .formANDarticles .unavailable hr {
 main .formANDarticles .unavailable p {
   font-size: 1.1em;
 }
-main .formANDarticles form {
-  background-color: rgb(255, 255, 255);
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 20px 30px 10px;
-  border-radius: 7px;
-}
-main .formANDarticles form .formFlex {
-  display: flex;
-  align-items: center;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted grey;
-}
-main .formANDarticles form .formFlex .operatorDiv, main .formANDarticles form .formFlex .fromDiv, main .formANDarticles form .formFlex .toDiv, main .formANDarticles form .formFlex .dash {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
-main .formANDarticles form .formFlex .dash {
-  width: 10px;
-  height: 2px;
-  border-bottom: 1px solid black;
-}
-main .formANDarticles form .formFlex .fromDiv, main .formANDarticles form .formFlex .toDiv {
-  position: relative;
-}
-main .formANDarticles form .formFlex .fromDiv label, main .formANDarticles form .formFlex .toDiv label {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-main .formANDarticles form input[type=submit] {
-  display: block;
-  margin: 10px auto 0;
-  background: #eaeaea url("../public/search.svg") no-repeat;
-  background-size: 25px;
-  background-position-x: 5px;
-  background-position-y: center;
-  padding: 5px 15px;
-  border: none;
-  outline: 1px solid grey;
-  border-radius: 15px;
-}
-main .formANDarticles form input[type=submit]:hover {
-  background: #cdcdcd url("../public/search.svg") no-repeat;
-  background-size: 25px;
-  background-position-x: 5px;
-  background-position-y: center;
-}
-main .formANDarticles .searchResult, main .formANDarticles article {
+main .formANDarticles article {
   width: 90%;
   margin: 20px auto;
 }
+main .formANDarticles .articleSeparator {
+  width: 90%;
+  height: 1px;
+  border-bottom: 1px solid rgb(168, 168, 168);
+}
 main .formANDarticles .switchDisplay {
+  margin-left: 5%;
   display: flex;
+  align-items: center;
+}
+main .formANDarticles .switchDisplay .listDiv {
+  padding-right: 5px;
+  border-right: 1px solid black;
+}
+main .formANDarticles .switchDisplay svg {
+  width: 30px;
+  height: auto;
+  display: block;
+}
+main .formANDarticles .switchDisplay .searchResult {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 20px;
 }
 main .formANDarticles .articleContainer {
   padding-bottom: 20px;
@@ -178,14 +305,6 @@ main .formANDarticles .articleContainer .listedArticle a {
 }
 main .formANDarticles .articleContainer .listedArticle a:visited {
   color: black;
-}
-main .formANDarticles .articleContainer .listedArticle a .date {
-  display: flex;
-  align-items: center;
-}
-main .formANDarticles .articleContainer .listedArticle a .date img {
-  width: 20px;
-  margin-right: 5px;
 }
 main .formANDarticles .articleContainer .listedArticle a h2 {
   text-decoration: underline;
@@ -224,20 +343,47 @@ main .formANDarticles .articleContainer .listedArticle a .a_flex img {
 }
 main .formANDarticles .articleContainer .thumbnailedArticle {
   width: 25%;
-  height: 25Vh;
+  height: 30Vh;
   overflow: hidden;
   margin: 20px;
 }
 main .formANDarticles .articleContainer .thumbnailedArticle a {
   display: block;
   position: relative;
+  color: #000000;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a h2 {
+main .formANDarticles .articleContainer .thumbnailedArticle a .date {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+}
+main .formANDarticles .articleContainer .thumbnailedArticle a h2 {
+  padding-left: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 main .formANDarticles .articleContainer .thumbnailedArticle a img {
   max-width: 100%;
   display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .formANDarticles .articleContainer .thumbnailedArticle a .whiteBack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .formANDarticles .articleContainer .thumbnailedArticle a .whiteBack, main .formANDarticles .articleContainer .thumbnailedArticle a .date, main .formANDarticles .articleContainer .thumbnailedArticle a h2 {
+  transition: all 0.2s ease-in-out;
+}
+main .formANDarticles .articleContainer .thumbnailedArticle:hover .whiteBack {
+  background-color: rgba(255, 255, 255, 0.5254901961);
+}
+main .formANDarticles .articleContainer .thumbnailedArticle:hover .date, main .formANDarticles .articleContainer .thumbnailedArticle:hover h2 {
+  opacity: 1;
 }/*# sourceMappingURL=index.css.map */

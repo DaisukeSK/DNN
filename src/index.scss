@@ -1,29 +1,211 @@
 $bg:#FFFFFF;
 
 body {
-    font-family: 'Times New Roman', Times, Arial, serif;
+    font-family: 'Helvetica', Arial, serif;
     margin: 0;
     padding: 0;
     background-color: $bg;
+    margin-top: 100px;
+    position: relative;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    img {
+        width: 20px;
+        margin-right: 5px;
+    }
+}
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff62;
+    z-index: 1;
+    @keyframes spinnin {
+        from {
+          transform: translate(-50%,-50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%,-50%) rotate(360deg);
+        }
+    }
+    div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width:100px;
+        height:100px;
+        border: 17px solid rgb(204, 204, 204);
+        border-bottom:  17px solid rgb(123, 136, 255);
+        border-top:  17px solid rgb(123, 136, 255);
+        border-radius: 50%;
+        animation-name: spinnin;
+        animation-duration:2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 }
 
 header {
     padding: 0 30px;
     display: flex;
     justify-content: space-between;
-    justify-content: center;
+    justify-content: space-between;
     background: linear-gradient(rgb(255, 145, 0), rgb(251, 255, 35));
-    border-bottom: 2px solid rgb(255, 206, 101);
-    h2 {
-        font-size: 1.8rem;
-        color: white;
-        text-shadow: rgb(255, 94, 0) 2px 2px 2px;
+    background: #000000;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    .tagFlex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &>div {
+            cursor: pointer;
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+    .logo {
+        width: 7%;
+        cursor: pointer;
+    }
+    form {
+        display: flex;
+        align-items: center;
+        input[type='text'] {
+            &:focus {
+                outline: none;
+            }
+        }
+        input[type='submit'] {
+            height: 25px;
+            margin-left: 5px;
+            background: rgb(71, 104, 143) url('../public/search2.svg') no-repeat;
+            background-size: 25px;
+            background-position: center;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 3px;
+            &:hover {
+                background: rgb(44, 67, 94) url('../public/search2.svg') no-repeat;
+                background-size: 25px;
+                background-position: center;
+            }
+        }
+        div {
+            position: relative;
+            font-size: 0.9em;
+            margin-left: 5px;
+            color: #ffffff;
+            z-index: 2;
+            span {
+                position: relative;
+                left: 100px;
+                transition: all .5s linear;
+                opacity: 0;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &:hover {
+                color: #ffa600;
+                span {
+                    left: 0;
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 
+.coverPageBG {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff93;
+    z-index: 1;
+}
+.detailedSearch {
+    background-color: rgba(255, 255, 255, 1);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px 30px 10px;
+    border-radius: 7px;
+    border: 1px solid grey;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    .x {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .formFlex {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px dotted grey;
+        .operatorDiv, .fromDiv, .toDiv, .dash {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+        .dash {
+            width: 10px;
+            height: 2px;
+            border-bottom: 1px solid black;
+        }
+        .fromDiv, .toDiv {
+            position: relative;
+            label {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    input[type="submit"] {
+        display: block;
+        margin: 10px auto 0;
+        background: #eaeaea url('../public/search.svg') no-repeat;
+        background-size: 25px;
+        background-position-x: 5px;
+        background-position-y: center;
+        padding: 5px 15px;
+        border: none;
+        outline: 1px solid grey;
+        border-radius: 15px;
+        &:hover {
+            background: #cdcdcd url('../public/search.svg') no-repeat;
+            background-size: 25px;
+            background-position-x: 5px;
+            background-position-y: center;
+        }
+    }
+    
+}
 main {
-    margin: 20px 7%;
+    margin: 20px 0%;
+    position: relative;
+
+    h1 {
+        margin-left: 5%;
+    }
+
     .tagFlex {
+        width: 90%;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         &>div {
@@ -41,29 +223,6 @@ main {
                 left: 0;
                 fill: $bg;
             }
-        }
-        .general {
-            background-color: #ffa600;
-        }
-        .business {
-            background-color: #ff00ff	;
-        }
-        .technology {
-            background-color: #0011ff;
-        }
-        .entertainment {
-            background-color: rgb(255, 57, 57);
-        }
-        .sports {
-            background-color: rgb(0, 255, 13);
-        }
-        .science {
-            background-color: rgb(255, 250, 0);
-            color: orange;
-        }
-        .health {
-            background-color: rgb(0, 255, 255);
-            color: rgb(0, 140, 255);
         }
     }
     .formANDarticles {
@@ -98,63 +257,35 @@ main {
                 font-size: 1.1em;
             }
         }
-        form {
-            background-color: rgba(255, 255, 255, 1);
-            width: fit-content;
-            margin: 0 auto;
-            padding: 20px 30px 10px;
-            border-radius: 7px;
-            .formFlex {
-                display: flex;
-                align-items: center;
-                padding-bottom: 10px;
-                border-bottom: 1px dotted grey;
-                .operatorDiv, .fromDiv, .toDiv, .dash {
-                    display: flex;
-                    flex-direction: column;
-                    margin-left: 20px;
-                }
-                .dash {
-                    width: 10px;
-                    height: 2px;
-                    border-bottom: 1px solid black;
-                }
-                .fromDiv, .toDiv {
-                    position: relative;
-                    label {
-                        position: absolute;
-                        top: -20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-                }
-            }
-
-            input[type="submit"] {
-                display: block;
-                margin: 10px auto 0;
-                background: #eaeaea url('../public/search.svg') no-repeat;
-                background-size: 25px;
-                background-position-x: 5px;
-                background-position-y: center;
-                padding: 5px 15px;
-                border: none;
-                outline: 1px solid grey;
-                border-radius: 15px;
-                &:hover {
-                    background: #cdcdcd url('../public/search.svg') no-repeat;
-                    background-size: 25px;
-                    background-position-x: 5px;
-                    background-position-y: center;
-                }
-            }
-        }
-        .searchResult, article {
+        
+        article {
             width: 90%;
             margin: 20px auto;
         }
+        .articleSeparator {
+            width: 90%;
+            height: 1px;
+            border-bottom: 1px solid rgb(168, 168, 168);
+        }
         .switchDisplay {
+            margin-left: 5%;
             display: flex;
+            align-items: center;
+            .listDiv {
+                padding-right: 5px;
+                border-right: 1px solid black;
+            }
+            svg {
+                width: 30px;
+                height: auto;
+                // height: 30px;
+                display: block;
+            }
+            .searchResult {
+                width: fit-content;
+                margin-left: 20px;
+                // background-color: #ff00ff;
+            }
         }
         .articleContainer {
             padding-bottom: 20px;
@@ -172,14 +303,6 @@ main {
                     color: black;
                     &:visited {
                         color: black;
-                    }
-                    .date {
-                        display: flex;
-                        align-items: center;
-                        img {
-                            width: 20px;
-                            margin-right: 5px;
-                        }
                     }
                     h2 {
                         text-decoration: underline;
@@ -220,23 +343,56 @@ main {
 
 
             .thumbnailedArticle {
+                // position: relative;
                 width: 25%;
-                height: 25Vh;
+                height: 30Vh;
                 overflow: hidden;
                 margin: 20px;
                 a {
                     display: block;
                     position: relative;
-                    h2 {
+                    color: #000000;
+                    .date {
                         position: absolute;
                         top: 0;
                         left: 0;
+                        opacity: 0;
+                    }
+                    h2 {
+                        padding-left: 10px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
                     }
                     img {
                         max-width: 100%;
                         // max-height: 100%;
                         display: block;
+                        object-fit: contain;
                     }
+                    .whiteBack {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        // background-color: #ffa60000;
+
+                    }
+                    .whiteBack, .date, h2 {
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                
+                &:hover {
+                    .whiteBack {
+                        background-color: #ffffff86;
+                    }
+                    .date, h2 {
+                        opacity: 1;
+                    }
+
                 }
             }
         }
