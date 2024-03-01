@@ -3,7 +3,7 @@ import { NewsArticle } from '../../App'
 function TopRight(Props:{news:NewsArticle}) {
   let newStr=''
   Props.news.description.split(' ').map((str:string,key:number)=>{
-  newStr+= key<20? `${str} `:key==20?`${str}...`:''
+  newStr+= key<15? `${str} `:key==15?`${str}...`:''
   })
 
   return (
@@ -17,7 +17,10 @@ function TopRight(Props:{news:NewsArticle}) {
         <a className='titleA' href={Props.news.url} target='_blank'>
           <h3>{Props.news.title}</h3>
         </a>
+        {Props.news.title.split(' ').length<=10 &&
+        
         <div>{newStr}</div>
+        }
       </div>
     
     </div>
