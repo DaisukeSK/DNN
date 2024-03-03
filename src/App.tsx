@@ -5,7 +5,7 @@ import Form from './components/Form';
 import HeadLine from './components/HeadLine/HeadLine';
 import Categorized from './components/Categorized';
 import Unavailable from './components/Unavailable';
-import dummy from './dummy.json'
+// import dummy from './dummy.json'
 
 export type NewsArticle={
   content: string,

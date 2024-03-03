@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { NewsCotext, APIkeys, NewsArticle } from '../../App'
 import axios from "axios";
-import dummy from '../../dummy.json'
+// import dummy from '../../dummy.json'
 import PickUp from "./PickUp";
 import TopRight from "./TopRight";
 import Trending from "./Trending";
