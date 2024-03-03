@@ -71,12 +71,16 @@ function HeadLine() {
 
         <div className='left'>
           {news3?.map((news:NewsArticle,key:number)=>{
+            let descStr=''
+            news.description.split(' ').map((str:string,key:number)=>{
+              descStr+= key<30? `${str} `:key==20?`${str}...`:''
+            })
             return key==9 &&
             <>
               <a className='titleA' href={news.url} target='_blank'>
                 <h2>{news.title}</h2>
               </a>
-              <div className="description">{news.description}</div>
+              <div className="description">{descStr}</div>
               <a className='imgA' href={news.url} target='_blank'>
                 <div className='whiteBG'></div>
                 <img src={news.image}/>
