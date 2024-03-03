@@ -9,7 +9,7 @@ function Unavailable() {
       </div>
       <hr/>
       <p>
-        Due to limitation of API usage, News App is temporarily unavailable.<br/>
+        Due to limitation of API usage, DNN is temporarily unavailable.<br/>
         Please try again later. ( The limitation is reset every 00:00 UTC.)
       </p>
     </div>

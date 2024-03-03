@@ -1,4 +1,11 @@
-function Trending(props:{number:number,news:any}){
+import { NewsArticle } from "../../App";
+
+function Trending(props:{number:number, news:NewsArticle}){
+
+    let newStr=''
+    props.news.title.split(' ').map((str:string,key:number)=>{
+    newStr+= key<20? `${str} `:key==20?`${str}...`:''
+    })
     return (
 
         <article>
@@ -11,7 +18,7 @@ function Trending(props:{number:number,news:any}){
             </a>
 
             <a className='titleA' href={props.news.url} target='_blank'>
-                <div>{props.news.title}</div>
+                <div>{newStr}</div>
             </a>
 
         </article>

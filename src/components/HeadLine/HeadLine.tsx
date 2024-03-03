@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { NewsCotext, APIkeys, NewsArticle } from '../../App'
 import axios from "axios";
-// import dummy from '../../dummy.json'
+import dummy from '../../dummy.json'
 import PickUp from "./PickUp";
 import TopRight from "./TopRight";
 import Trending from "./Trending";
@@ -109,7 +109,7 @@ function HeadLine() {
       <hr/>
 
       <section className='hot'>
-        {news2?.map((news:any,key:number)=>{
+        {news2?.map((news:NewsArticle, key:number)=>{
           return key==9 &&
             <a className='titleA' href={news.url} target='_blank'>
               <img src={news.image}/>
@@ -123,17 +123,17 @@ function HeadLine() {
 
       <section className='pickUp'>
 
-        {news1?.map((news:any,key:number)=>{
+        {news1?.map((news:NewsArticle, key:number)=>{
           return key==1 &&
           <PickUp news={news} category={'Entertainment'}/>
         })}
 
-        {news2?.map((news:any,key:number)=>{
+        {news2?.map((news:NewsArticle, key:number)=>{
           return key==1 &&
           <PickUp news={news} category={'Sports'}/>
         })}
 
-        {news3?.map((news:any,key:number)=>{
+        {news3?.map((news:NewsArticle, key:number)=>{
           return key==1 &&
           <PickUp news={news} category={'Business'}/>
         })}
@@ -152,15 +152,15 @@ function HeadLine() {
           </div>
 
           <div className="leftFlex">
-            {news1?.map((news:any,key:number)=>{
+            {news1?.map((news:NewsArticle, key:number)=>{
               return key>1 && key<=4 &&
               <MoreToExpolore news={news}/>
             })}
-            {news2?.map((news:any,key:number)=>{
+            {news2?.map((news:NewsArticle, key:number)=>{
               return key>1 && key<=4 &&
               <MoreToExpolore news={news}/>
             })}
-            {news3?.map((news:any,key:number)=>{
+            {news3?.map((news:NewsArticle, key:number)=>{
               return key>1 && key<=4 &&
               <MoreToExpolore news={news}/>
             })}
@@ -174,7 +174,7 @@ function HeadLine() {
             <h3>Trending</h3>
           </div>
           
-          {news1?.map((news:any,key:number)=>{
+          {news1?.map((news:NewsArticle, key:number)=>{
             number++
               return key<7 &&
               <Trending news={news} number={number}/>

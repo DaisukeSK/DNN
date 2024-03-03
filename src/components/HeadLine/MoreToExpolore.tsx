@@ -1,6 +1,11 @@
 import { NewsArticle } from '../../App'
 
 function MoreToExpolore(props:{news:NewsArticle}) {
+  let newStr=''
+  props.news.title.split(' ').map((str:string,key:number)=>{
+  newStr+= key<20? `${str} `:key==20?`${str}...`:''
+  })
+
   
   return (
     <article>
@@ -11,7 +16,7 @@ function MoreToExpolore(props:{news:NewsArticle}) {
       </a>
       
       <a className='titleA' href={props.news.url} target='_blank'>
-        <h4>{props.news.title}</h4>
+        <h4>{newStr}</h4>
       </a>
 
     </article>

@@ -2,8 +2,9 @@ body {
   font-family: "Helvetica", Arial, serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: #FFFFFF;
-  margin-top: 100px;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -122,8 +123,8 @@ header form div:hover span {
 
 .coverPageBG {
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.5764705882);
@@ -134,11 +135,10 @@ header form div:hover span {
   background-color: rgb(255, 255, 255);
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto;
   padding: 20px 30px 10px;
   border-radius: 7px;
   border: 1px solid grey;
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
@@ -193,20 +193,54 @@ header form div:hover span {
   background-position-y: center;
 }
 
-main {
-  margin: 20px 0%;
+.unavailable {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgb(221, 221, 221);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+.unavailable .unavailableFlex {
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.unavailable .unavailableFlex img {
+  width: 30px;
+  margin-right: 10px;
+}
+.unavailable .unavailableFlex h2 {
+  margin: 0;
+}
+.unavailable hr {
+  width: 90%;
+  margin: 10px auto;
+}
+.unavailable p {
+  font-size: 1.1em;
+}
+
+.categorized {
+  margin: 100px 0% 20px;
   position: relative;
 }
-main h1 {
+.categorized h1 {
   margin-left: 5%;
 }
-main .tagFlex {
+.categorized .tagFlex {
   width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
-main .tagFlex > div {
+.categorized .tagFlex > div {
   border-radius: 0 5px 0 0;
   width: 100%;
   text-align: center;
@@ -216,174 +250,144 @@ main .tagFlex > div {
   font-size: 1.2em;
   position: relative;
 }
-main .tagFlex > div svg {
+.categorized .tagFlex > div svg {
   position: absolute;
   top: 0;
   left: 0;
   fill: #FFFFFF;
 }
-main .formANDarticles {
+.categorized .formANDarticles {
   position: relative;
   border-radius: 0 0 7px 7px;
   padding: 20px 0 5px;
 }
-main .formANDarticles .unavailable {
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: white;
-  margin: 20px auto;
-  border-radius: 7px;
-  padding: 10px 30px;
-  box-sizing: border-box;
-}
-main .formANDarticles .unavailable .unavailableFlex {
-  display: flex;
-  align-items: center;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-}
-main .formANDarticles .unavailable .unavailableFlex img {
-  width: 30px;
-  margin-right: 10px;
-}
-main .formANDarticles .unavailable .unavailableFlex h2 {
-  margin: 0;
-}
-main .formANDarticles .unavailable hr {
-  width: 90%;
-  margin: 10px auto;
-}
-main .formANDarticles .unavailable p {
-  font-size: 1.1em;
-}
-main .formANDarticles article {
+.categorized .formANDarticles article {
   width: 90%;
   margin: 20px auto;
 }
-main .formANDarticles .articleSeparator {
+.categorized .formANDarticles .articleSeparator {
   width: 90%;
   height: 1px;
   border-bottom: 1px solid rgb(168, 168, 168);
 }
-main .formANDarticles .switchDisplay {
+.categorized .formANDarticles .switchDisplay {
   margin-left: 5%;
   display: flex;
   align-items: center;
 }
-main .formANDarticles .switchDisplay .listDiv {
+.categorized .formANDarticles .switchDisplay .listDiv {
   padding-right: 5px;
   border-right: 1px solid black;
 }
-main .formANDarticles .switchDisplay svg {
+.categorized .formANDarticles .switchDisplay svg {
   width: 30px;
   height: auto;
   display: block;
 }
-main .formANDarticles .switchDisplay .searchResult {
+.categorized .formANDarticles .switchDisplay .searchResult {
   width: -moz-fit-content;
   width: fit-content;
   margin-left: 20px;
 }
-main .formANDarticles .articleContainer {
+.categorized .formANDarticles .articleContainer {
   padding-bottom: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-main .formANDarticles .articleContainer .listedArticle {
+.categorized .formANDarticles .articleContainer .listedArticle {
   height: -moz-fit-content;
   height: fit-content;
   padding: 10px 7% 20px;
   box-sizing: border-box;
   outline: 3px solid transparent;
 }
-main .formANDarticles .articleContainer .listedArticle a {
+.categorized .formANDarticles .articleContainer .listedArticle a {
   text-decoration: none;
   color: black;
 }
-main .formANDarticles .articleContainer .listedArticle a:visited {
+.categorized .formANDarticles .articleContainer .listedArticle a:visited {
   color: black;
 }
-main .formANDarticles .articleContainer .listedArticle a h2 {
+.categorized .formANDarticles .articleContainer .listedArticle a h2 {
   text-decoration: underline;
   margin: 0;
   margin-bottom: 20px;
 }
-main .formANDarticles .articleContainer .listedArticle a .a_flex {
+.categorized .formANDarticles .articleContainer .listedArticle a .a_flex {
   display: flex;
   align-items: center;
 }
-main .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer {
+.categorized .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer {
   position: relative;
 }
-main .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer p {
+.categorized .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer p {
   margin: 0 20px 0 0;
   font-size: 1.1em;
 }
-main .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer .readMore {
+.categorized .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer .readMore {
   display: flex;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 100px;
 }
-main .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer .readMore span {
+.categorized .formANDarticles .articleContainer .listedArticle a .a_flex .pContainer .readMore span {
   width: 100%;
   text-align: center;
   align-self: flex-end;
   font-size: 1.1em;
   color: navy;
 }
-main .formANDarticles .articleContainer .listedArticle a .a_flex img {
+.categorized .formANDarticles .articleContainer .listedArticle a .a_flex img {
   width: 300px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle {
   width: 25%;
   height: 30Vh;
   overflow: hidden;
   margin: 20px;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle a {
   display: block;
   position: relative;
   color: #000000;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a .date {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle a .date {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a h2 {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle a h2 {
   padding-left: 10px;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a img {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle a img {
   max-width: 100%;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a .whiteBack {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle a .whiteBack {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle a .whiteBack, main .formANDarticles .articleContainer .thumbnailedArticle a .date, main .formANDarticles .articleContainer .thumbnailedArticle a h2 {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle a .whiteBack, .categorized .formANDarticles .articleContainer .thumbnailedArticle a .date, .categorized .formANDarticles .articleContainer .thumbnailedArticle a h2 {
   transition: all 0.2s ease-in-out;
 }
-main .formANDarticles .articleContainer .thumbnailedArticle:hover .whiteBack {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle:hover .whiteBack {
   background-color: rgba(255, 255, 255, 0.5254901961);
 }
-main .formANDarticles .articleContainer .thumbnailedArticle:hover .date, main .formANDarticles .articleContainer .thumbnailedArticle:hover h2 {
+.categorized .formANDarticles .articleContainer .thumbnailedArticle:hover .date, .categorized .formANDarticles .articleContainer .thumbnailedArticle:hover h2 {
   opacity: 1;
 }/*# sourceMappingURL=index.css.map */

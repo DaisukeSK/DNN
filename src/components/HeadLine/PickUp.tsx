@@ -17,6 +17,11 @@ function PickUp(Props:{news:NewsArticle, category:string}) {
     return `${date.toLocaleString('default', { month: 'short' })} ${date.getDate()}, ${date.getFullYear()}`
   }
 
+  let newStr=''
+  Props.news.title.split(' ').map((str:string,key:number)=>{
+  newStr+= key<20? `${str} `:key==20?`${str}...`:''
+  })
+
   return (
 
     <div className={`pickUp${Props.category}`}>
@@ -47,7 +52,7 @@ function PickUp(Props:{news:NewsArticle, category:string}) {
       </div>
 
       <a className='titleA' href={Props.news.url} target='_blank'>
-        <h2>{Props.news.title}</h2>
+        <h2>{newStr}</h2>
       </a>
           
     </div>

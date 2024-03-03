@@ -12,13 +12,13 @@ function Categorized() {
 
   return (
 
-    <main>
+    <main className='categorized'>
 
       <h1>{selectedCategory}</h1>
       
       <div className='formANDarticles'>
 
-        {APIunavailable && <Unavailable/>}
+        {/* {APIunavailable && <Unavailable/>} */}
 
         {!APIunavailable &&
           <>

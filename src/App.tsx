@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Form from './components/Form';
 import HeadLine from './components/HeadLine/HeadLine';
 import Categorized from './components/Categorized';
+import Unavailable from './components/Unavailable';
+import dummy from './dummy.json'
 
 export type NewsArticle={
   content: string,
@@ -147,15 +149,23 @@ function App() {
   return (
     <NewsCotext.Provider value={{lang,textRef,orRef,andRef,fromRef,toRef,setSearchTerm,searchTerm,setMultiWord,multiWord,runAxios,setDummyArticles,setDetailedSearch,setSelectedCategory,setHeadLine,setAPIunavailable,selectedCategory,APIunavailable,setDisplayList,displayList,searchResult,setSearchResult,setNews,news,setLoaded}}>
       <Header/>
-      <div className='loading' style={{display:loaded?'none':'block'}}>
-        <div></div>
-      </div>
+
+      {APIunavailable && <Unavailable/>}
+
+      {!APIunavailable &&
+        <div className='loading' style={{display:loaded?'none':'block'}}>
+          <div></div>
+        </div>
+      
+      }
 
       {detailedSearch && <Form/>}
-            
-      {headLine && <HeadLine/>}
 
-      {!headLine && <Categorized/>}
+      
+            
+      {!APIunavailable && headLine && <HeadLine/>}
+
+      {!APIunavailable && !headLine && <Categorized/>}
 
     </NewsCotext.Provider>
   )
