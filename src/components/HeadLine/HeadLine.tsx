@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { NewsCotext, APIkeys, NewsArticle } from '../../App'
 import axios from "axios";
-import dummy from '../../dummy.json'
+// import dummy from '../../dummy.json'
 import PickUp from "./PickUp";
 import TopRight from "./TopRight";
 import Trending from "./Trending";
@@ -47,12 +47,12 @@ function HeadLine() {
   };
 
   useEffect(()=>{
-    // runAxiosForHeadline(0,['entertainment','sports','business'],'en')
+    runAxiosForHeadline(0,['entertainment','sports','business'],'en')
 
-    setNews1(dummy.data)
-    setNews2(dummy.data)
-    setNews3(dummy.data)
-    setLoaded(true)
+    // setNews1(dummy.data)
+    // setNews2(dummy.data)
+    // setNews3(dummy.data)
+    // setLoaded(true)
   },[])
 
   let number:number=0;
