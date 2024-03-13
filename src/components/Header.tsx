@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
 import { NewsCotext } from '../App'
-import DNN from '../../public/dnn2.png'
+import DNN from '../../public/dnn.png'
 
 function Header() {
 
@@ -61,7 +61,7 @@ function Header() {
       </div>
 
       <form onSubmit={(e)=>searchArticle(e)}>
-        <input type='text' ref={H_textRef} required/>
+        <input type='text' ref={H_textRef} required placeholder='Enter a keyword.'/>
         <input type='submit' value=''/>
         <div onClick={()=>setDetailedSearch(true)}>&gt;&gt;<span>Furthur search</span></div>
       </form>

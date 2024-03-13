@@ -51,7 +51,9 @@ body {
 }
 
 header {
+  width: 100%;
   padding: 0 30px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   justify-content: space-between;
@@ -72,7 +74,7 @@ header .tagFlex > div {
   color: rgba(255, 255, 255, 0.7);
 }
 header .logo {
-  width: 7%;
+  width: 90px;
   cursor: pointer;
 }
 header form {
@@ -133,15 +135,13 @@ header form div:hover span {
 
 .detailedSearch {
   background-color: rgb(255, 255, 255);
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 20px 30px 10px;
+  padding: 20px 50px;
   border-radius: 7px;
   border: 1px solid grey;
   position: fixed;
-  top: 100px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 .detailedSearch .x {
@@ -149,34 +149,55 @@ header form div:hover span {
   top: 10px;
   right: 10px;
 }
-.detailedSearch .formFlex {
+.detailedSearch .x svg {
+  display: block;
+  background-color: none;
+  padding: 3px;
+  border-radius: 3px;
+}
+.detailedSearch .x svg path {
+  fill: none;
+  stroke: #000000;
+}
+.detailedSearch .x:hover svg {
+  background-color: #ff4a4a;
+}
+.detailedSearch .x:hover svg path {
+  stroke: #ffffff;
+}
+.detailedSearch .keyword {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted grey;
 }
-.detailedSearch .formFlex .operatorDiv, .detailedSearch .formFlex .fromDiv, .detailedSearch .formFlex .toDiv, .detailedSearch .formFlex .dash {
+.detailedSearch .keyword input[type=text] {
+  width: 200px;
+  margin-right: 30px;
+}
+.detailedSearch .categoryAndLang {
+  margin: 30px 0;
   display: flex;
-  flex-direction: column;
-  margin-left: 20px;
+  justify-content: center;
 }
-.detailedSearch .formFlex .dash {
-  width: 10px;
-  height: 2px;
-  border-bottom: 1px solid black;
+.detailedSearch .categoryAndLang select[name=category] {
+  margin-right: 30px;
 }
-.detailedSearch .formFlex .fromDiv, .detailedSearch .formFlex .toDiv {
-  position: relative;
+.detailedSearch .dateRange {
+  display: flex;
+  justify-content: center;
 }
-.detailedSearch .formFlex .fromDiv label, .detailedSearch .formFlex .toDiv label {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
+.detailedSearch .dateRange .dash {
+  margin: 0 10px;
+}
+.detailedSearch hr {
+  width: 100%;
+  margin: 30px 0 20px;
+  border: 0;
+  border-bottom: 1px solid rgba(97, 97, 97, 0.3);
 }
 .detailedSearch input[type=submit] {
   display: block;
-  margin: 10px auto 0;
+  margin: 0 auto;
   background: #eaeaea url("../public/search.svg") no-repeat;
   background-size: 25px;
   background-position-x: 5px;

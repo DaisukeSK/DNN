@@ -1,4 +1,4 @@
-import altImg from '../../../public/altImg.png';
+import altImg from '../../../public/dnn.png';
 import clockImg from '../../../public/clock.svg';
 import { NewsArticle } from '../../App';
 

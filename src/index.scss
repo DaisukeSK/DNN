@@ -58,7 +58,9 @@ body {
 }
 
 header {
+    width: 100%;
     padding: 0 30px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     justify-content: space-between;
@@ -78,7 +80,7 @@ header {
         }
     }
     .logo {
-        width: 7%;
+        width: 90px;
         cursor: pointer;
     }
     form {
@@ -141,50 +143,95 @@ header {
 }
 .detailedSearch {
     background-color: rgba(255, 255, 255, 1);
-    width: fit-content;
+    // width: fit-content;
     // margin: 0 auto;
-    padding: 20px 30px 10px;
+    padding: 20px 50px;
     border-radius: 7px;
     border: 1px solid grey;
     position: fixed;
-    top: 100px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-50%);
     z-index: 1;
+
+    // display: flex;
+    // flex-direction: column;
     .x {
         position: absolute;
         top: 10px;
         right: 10px;
-    }
-    .formFlex {
-        display: flex;
-        align-items: center;
-        padding-bottom: 10px;
-        border-bottom: 1px dotted grey;
-        .operatorDiv, .fromDiv, .toDiv, .dash {
-            display: flex;
-            flex-direction: column;
-            margin-left: 20px;
-        }
-        .dash {
-            width: 10px;
-            height: 2px;
-            border-bottom: 1px solid black;
-        }
-        .fromDiv, .toDiv {
-            position: relative;
-            label {
-                position: absolute;
-                top: -20px;
-                left: 50%;
-                transform: translateX(-50%);
+        // background-color: chocolate;
+        svg {
+            display: block;
+            background-color: none;
+            padding: 3px;
+            border-radius: 3px;
+            path {
+                fill: none;
+                stroke: #000000;
             }
         }
+        &:hover {
+            svg {
+                background-color: #ff4a4a;
+                path {
+                    // fill: none;
+                    stroke: #ffffff;
+                }
+            }
+        }
+    }
+    // .operatorDiv {
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-left: 20px;
+    // }
+    .keyword {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: #ffa60065;
+        input[type='text'] {
+            width: 200px;
+            margin-right: 30px;
+        }
+    }
+    .categoryAndLang {
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+        // background-color: #0400ff65;
+        select[name='category'] {
+            margin-right: 30px;
+        }
+    }
+    
+    // .formFlex {
+    //     display: flex;
+    //     align-items: center;
+    //     padding-bottom: 10px;
+    //     border-bottom: 1px dotted grey;
+    // }
+    
+
+    .dateRange {
+        display: flex;
+        justify-content: center;
+        // background-color: #00ff8865;
+        .dash {
+            margin: 0 10px;
+        }
+    }
+    hr {
+        width: 100%;
+        margin: 30px 0 20px;
+        border: 0;
+        border-bottom: 1px solid rgba(97, 97, 97, 0.3);
     }
 
     input[type="submit"] {
         display: block;
-        margin: 10px auto 0;
+        margin: 0 auto;
         background: #eaeaea url('../public/search.svg') no-repeat;
         background-size: 25px;
         background-position-x: 5px;
