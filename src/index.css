@@ -80,6 +80,7 @@ header .logo {
 header form {
   display: flex;
   align-items: center;
+  margin-right: 100px;
 }
 header form input[type=text]:focus {
   outline: none;
@@ -101,13 +102,18 @@ header form input[type=submit]:hover {
 }
 header form div {
   position: relative;
-  font-size: 0.9em;
+  font-size: 1.2rem;
   margin-left: 5px;
   color: #ffffff;
   z-index: 2;
+  padding-right: 20px;
 }
 header form div span {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  white-space: nowrap;
   left: 100px;
   transition: all 0.5s linear;
   opacity: 0;
@@ -119,7 +125,7 @@ header form div:hover {
   color: #ffa600;
 }
 header form div:hover span {
-  left: 0;
+  left: 30px;
   opacity: 1;
 }
 
@@ -252,8 +258,33 @@ header form div:hover span {
   margin: 100px 0% 20px;
   position: relative;
 }
-.categorized h1 {
+.categorized .categoryTitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-left: 5%;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+.categorized .categoryTitle svg {
+  margin: 0 10px;
+}
+.categorized .categoryTitle h1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  padding-right: 100px;
+  font-style: italic;
+}
+.categorized .categoryTitle .forBDbottom {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 .categorized .tagFlex {
   width: 90%;

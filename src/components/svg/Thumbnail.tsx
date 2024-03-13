@@ -1,10 +1,11 @@
-function Thumbnail() {
+function Thumbnail(props:{fillColor:string}) {
 
   return (
     <svg
       width="50"
       height="50"
       viewBox="0 0 13.229166 13.229167"
+      fill={props.fillColor}
     >
       <g>
         <rect

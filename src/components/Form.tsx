@@ -141,20 +141,22 @@ function Form() {
           <label>Language:&nbsp;</label>
           <select name='lang' ref={langRef}>
             <option value='en'>English</option>
-            <option value='ja'>Japanese</option>
+            <option value='ar'>Arabic</option>
             <option value='zh'>Chinese</option>
             <option value='nl'>Dutch</option>
             <option value='fr'>French</option>
-
-            <option value='ar'>Arabic</option>
             <option value='de'>German</option>
             <option value='el'>Greek</option>
             <option value='he'>Hebrew</option>
             <option value='hi'>Hindi</option>
             <option value='it'>Italian</option>
+
+
+            <option value='ja'>Japanese</option>
             <option value='ml'>Malayalam</option>
             <option value='mr'>Marathi</option>
             <option value='no'>Norwegian</option>
+
             <option value='pt'>Portuguese</option>
 
             <option value='ro'>Romanian</option>

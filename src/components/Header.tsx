@@ -63,7 +63,7 @@ function Header() {
       <form onSubmit={(e)=>searchArticle(e)}>
         <input type='text' ref={H_textRef} required placeholder='Enter a keyword.'/>
         <input type='submit' value=''/>
-        <div onClick={()=>setDetailedSearch(true)}>&gt;&gt;<span>Furthur search</span></div>
+        <div onClick={()=>setDetailedSearch(true)}>&gt;&gt;<span>Furthur Search</span></div>
       </form>
       
     </header>
