@@ -6,6 +6,8 @@ import PickUp from "./PickUp";
 import TopRight from "./TopRight";
 import Trending from "./Trending";
 import MoreToExpolore from "./MoreToExpolore";
+import altImg from '../../../public/dnn.png'
+import altImg2 from '../../../public/dnn2.png'
 
 function HeadLine() {
 
@@ -83,7 +85,7 @@ function HeadLine() {
               <div className="description">{descStr}</div>
               <a className='imgA' href={news.url} target='_blank'>
                 <div className='whiteBG'></div>
-                <img src={news.image}/>
+                <img src={news.image} onError={(e)=>{$(e.target).attr('src',altImg)}}/>
               </a>
             </>
           })}
@@ -116,7 +118,7 @@ function HeadLine() {
         {news2?.map((news:NewsArticle, key:number)=>{
           return key==9 &&
             <a className='titleA' href={news.url} target='_blank'>
-              <img src={news.image}/>
+              <img src={news.image} onError={(e)=>{$(e.target).attr('src',altImg2)}}/>
               <h2>{news.title}</h2>
               <div>Hot!</div>
             </a>

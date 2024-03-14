@@ -94,6 +94,7 @@ header form input[type=submit] {
   padding: 5px 15px;
   border: none;
   border-radius: 3px;
+  cursor: pointer;
 }
 header form input[type=submit]:hover {
   background: rgb(44, 67, 94) url("../public/search2.svg") no-repeat;
@@ -107,6 +108,7 @@ header form div {
   color: #ffffff;
   z-index: 2;
   padding-right: 20px;
+  cursor: pointer;
 }
 header form div span {
   position: absolute;
@@ -154,6 +156,7 @@ header form div:hover span {
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
 }
 .detailedSearch .x svg {
   display: block;
@@ -212,6 +215,7 @@ header form div:hover span {
   border: none;
   outline: 1px solid grey;
   border-radius: 15px;
+  cursor: pointer;
 }
 .detailedSearch input[type=submit]:hover {
   background: #cdcdcd url("../public/search.svg") no-repeat;
@@ -330,6 +334,10 @@ header form div:hover span {
 .categorized .formANDarticles .switchDisplay .listDiv {
   padding-right: 5px;
   border-right: 1px solid black;
+  cursor: pointer;
+}
+.categorized .formANDarticles .switchDisplay .thumbnailDiv {
+  cursor: pointer;
 }
 .categorized .formANDarticles .switchDisplay svg {
   width: 30px;
@@ -339,6 +347,7 @@ header form div:hover span {
 .categorized .formANDarticles .switchDisplay .searchResult {
   width: -moz-fit-content;
   width: fit-content;
+  margin: 0;
   margin-left: 20px;
 }
 .categorized .formANDarticles .articleContainer {

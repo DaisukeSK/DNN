@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NewsCotext, NewsArticle } from '../../App'
 import clockImg from '../../../public/clock.svg'
+import altImg from '../../../public/dnn.png'
 
 
 function PickUp(Props:{news:NewsArticle, category:string}) {
@@ -43,7 +44,7 @@ function PickUp(Props:{news:NewsArticle, category:string}) {
 
       <a className='imgA' href={Props.news.url} target='_blank'>
         <div className='whiteBG'></div>
-        <img src={Props.news.image}/>
+        <img src={Props.news.image} onError={(e)=>{$(e.target).attr('src',altImg)}}/>
       </a>
 
       <div className='date'>

@@ -1,4 +1,5 @@
 import { NewsArticle } from '../../App'
+import altImg from '../../../public/dnn.png'
 
 function TopRight(Props:{news:NewsArticle}) {
   let newStr=''
@@ -10,7 +11,7 @@ function TopRight(Props:{news:NewsArticle}) {
     <div className="flex">
       <a className='imgA' href={Props.news.url} target='_blank'>
         <div className='whiteBG'></div>
-        <img src={Props.news.image}/>
+        <img src={Props.news.image} onError={(e)=>{$(e.target).attr('src',altImg)}}/>
       </a>
     
       <div>

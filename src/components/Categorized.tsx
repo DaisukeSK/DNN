@@ -68,8 +68,15 @@ function Categorized() {
           <>
             <div className='switchDisplay'>
               <div>Display:</div>
-              <div className='listDiv' onClick={()=>setDisplayList(true)}><List fillColor={displayList?'#000000':'#aaaaaa'}/></div>
-              <div className='thumbnailDiv' onClick={()=>setDisplayList(false)}><Thumbnail fillColor={displayList?'#aaaaaa':'#000000'}/></div>
+
+              <div className='listDiv' style={{pointerEvents:displayList?'none':'auto'}} onClick={()=>setDisplayList(true)}>
+                <List fillColor={displayList?'#000000':'#aaaaaa'}/>
+              </div>
+
+              <div className='thumbnailDiv' style={{pointerEvents:displayList?'auto':'none'}} onClick={()=>setDisplayList(false)}>
+                <Thumbnail fillColor={displayList?'#aaaaaa':'#000000'}/>
+              </div>
+
               {searchResult[0] &&
                 <h3 className='searchResult'>{searchResult[1]>=10?'10+':searchResult[1]} article(s) found.</h3>
               }
