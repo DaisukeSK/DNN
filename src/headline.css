@@ -125,9 +125,7 @@
 }
 .headline .hot a h2 {
   position: absolute;
-  width: -moz-fit-content;
-  width: fit-content;
-  text-wrap: nowrap;
+  text-wrap: wrap;
   bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
