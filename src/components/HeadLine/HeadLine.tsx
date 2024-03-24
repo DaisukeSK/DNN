@@ -49,12 +49,12 @@ function HeadLine() {
   };
 
   useEffect(()=>{
-    // runAxiosForHeadline(0,['entertainment','sports','business'],'en')
+    runAxiosForHeadline(0,['entertainment','sports','business'],'en')
 
-    setNews1(dummy.data)
-    setNews2(dummy.data)
-    setNews3(dummy.data)
-    setLoaded(true)
+    // setNews1(dummy.data)
+    // setNews2(dummy.data)
+    // setNews3(dummy.data)
+    // setLoaded(true)
   },[])
 
   let number:number=0;
