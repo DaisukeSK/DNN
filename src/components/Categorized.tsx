@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NewsCotext, NewsArticle } from '../App'
 import Thumbnail from "./svg/Thumbnail";
 import List from "./svg/List";
@@ -16,8 +16,9 @@ import GeneralSVG from "./svg/categories/GeneralSVG";
 function Categorized() {
 
   
+  const {selectedCategory,APIunavailable,searchResult,news}=useContext(NewsCotext)
   
-  const {selectedCategory,APIunavailable,setDisplayList,displayList,searchResult,news}=useContext(NewsCotext)
+  const [displayList, setDisplayList] = useState<boolean>(true);
   
   const titleColor:string=selectedCategory=='General'?'OrangeRed':
   selectedCategory=='Business'?'navy':

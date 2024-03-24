@@ -6,10 +6,10 @@ import altImg from '../../../public/dnn.png'
 
 function PickUp(Props:{news:NewsArticle, category:string}) {
 
-  const { setHeadLine, runAxios } = useContext(NewsCotext)
+  const { runAxios } = useContext(NewsCotext)
 
   const SeeMore=(category:string)=>{
-    setHeadLine(false)
+    // setHeadLine(false)
     runAxios(0, category, 'en', '', '', '', false);
   }
 

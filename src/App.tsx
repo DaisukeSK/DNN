@@ -1,4 +1,4 @@
-import { useState, useRef, createContext, RefObject } from 'react';
+import { useState, createContext } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
 import Form from './components/Form';
@@ -17,25 +17,25 @@ export type NewsArticle={
   url: string
 };
 
-export type SearchTerm={
-  keyword: string[],
-  from: string,
-  to: string,
-  category: string,
-  operator: string
-};
+// export type SearchTerm={
+//   keyword: string[],
+//   from: string,
+//   to: string,
+//   category: string,
+//   operator: string
+// };
 
 type NewsContextValues={
-  lang: string,
-  textRef: RefObject<HTMLInputElement>,
-  orRef: RefObject<HTMLInputElement>,
-  andRef: RefObject<HTMLInputElement>,
-  fromRef: RefObject<HTMLInputElement>,
-  toRef: RefObject<HTMLInputElement>,
-  setSearchTerm: (state: SearchTerm)=>void,
-  searchTerm: SearchTerm,
-  setMultiWord: (state: boolean)=>void,
-  multiWord: boolean,
+  // lang: string,
+  // textRef: RefObject<HTMLInputElement>,
+  // orRef: RefObject<HTMLInputElement>,
+  // andRef: RefObject<HTMLInputElement>,
+  // fromRef: RefObject<HTMLInputElement>,
+  // toRef: RefObject<HTMLInputElement>,
+  // setSearchTerm: (state: SearchTerm)=>void,
+  // searchTerm: SearchTerm,
+  // setMultiWord: (state: boolean)=>void,
+  // multiWord: boolean,
   runAxios: (
     number: number,
     category: string,
@@ -45,15 +45,13 @@ type NewsContextValues={
     to: string,
     search: boolean
     )=>void,
-  setDummyArticles: any,
   setDetailedSearch: React.Dispatch<React.SetStateAction<boolean>>,
   setSelectedCategory: React.Dispatch<React.SetStateAction<string>>,
   setHeadLine: React.Dispatch<React.SetStateAction<boolean>>,
   setAPIunavailable: React.Dispatch<React.SetStateAction<boolean>>,
   selectedCategory: string,
   APIunavailable: boolean,
-  setDisplayList: React.Dispatch<React.SetStateAction<boolean>>,
-  displayList: boolean,
+  
   searchResult:[boolean,number],
   setSearchResult: React.Dispatch<React.SetStateAction<[boolean, number]>>,
   setNews: React.Dispatch<React.SetStateAction<NewsArticle[] | undefined>>,
@@ -82,29 +80,29 @@ export const APIkeys=[
 function App() {
 
   const [news, setNews] = useState<Array<NewsArticle>>();
-  const [searchTerm, setSearchTerm] = useState<SearchTerm>({
-      keyword: [],
-      from: '',
-      to: '',
-      category: 'general',
-      operator: 'OR'
-    });
-  const [multiWord, setMultiWord] = useState<boolean>(false);
+  // const [searchTerm, setSearchTerm] = useState<SearchTerm>({
+  //     keyword: [],
+  //     from: '',
+  //     to: '',
+  //     category: 'general',
+  //     operator: 'OR'
+  //   });
+  // const [multiWord, setMultiWord] = useState<boolean>(false);
   const [searchResult, setSearchResult] = useState<[boolean,number]>([false,0]);
   const [APIunavailable, setAPIunavailable] = useState<boolean>(false);
-  const [displayList, setDisplayList] = useState<boolean>(true);
+  // const [displayList, setDisplayList] = useState<boolean>(true);
   const [detailedSearch, setDetailedSearch] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [headLine, setHeadLine] = useState<boolean>(true);
   const [loaded, setLoaded]=useState<boolean>(false)
 
-  const textRef=useRef<HTMLInputElement>(null);
-  const orRef=useRef<HTMLInputElement>(null);
-  const andRef=useRef<HTMLInputElement>(null);
-  const fromRef=useRef<HTMLInputElement>(null);
-  const toRef=useRef<HTMLInputElement>(null);
+  // const textRef=useRef<HTMLInputElement>(null);
+  // const orRef=useRef<HTMLInputElement>(null);
+  // const andRef=useRef<HTMLInputElement>(null);
+  // const fromRef=useRef<HTMLInputElement>(null);
+  // const toRef=useRef<HTMLInputElement>(null);
 
-  const lang:string='en';
+  // const lang:string='en';
   
   const runAxios=(
     number:number,
@@ -140,14 +138,8 @@ function App() {
       });
   };
 
-  const setDummyArticles=(boolean: boolean, number: number):void =>{
-    // setNews([...dummyArticle]);
-    // setSearchResult([boolean,number]);
-    console.log(boolean,number);
-  };
-
   return (
-    <NewsCotext.Provider value={{lang,textRef,orRef,andRef,fromRef,toRef,setSearchTerm,searchTerm,setMultiWord,multiWord,runAxios,setDummyArticles,setDetailedSearch,setSelectedCategory,setHeadLine,setAPIunavailable,selectedCategory,APIunavailable,setDisplayList,displayList,searchResult,setSearchResult,setNews,news,setLoaded}}>
+    <NewsCotext.Provider value={{runAxios,setDetailedSearch,setSelectedCategory,setHeadLine,setAPIunavailable,selectedCategory,APIunavailable,searchResult,setSearchResult,setNews,news,setLoaded}}>
       <Header/>
 
       {APIunavailable && <Unavailable/>}

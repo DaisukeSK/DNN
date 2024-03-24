@@ -1,10 +1,34 @@
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { NewsCotext } from '../App';
+
+type SearchTermType={
+  keyword: string[],
+  from: string,
+  to: string,
+  category: string,
+  operator: string
+};
 
 function Form() {
 
-  const {textRef,orRef,andRef,fromRef,toRef,setSearchTerm,searchTerm,setMultiWord,multiWord,runAxios,setDummyArticles,setDetailedSearch,setHeadLine} = useContext(NewsCotext);
+  const {runAxios,setDetailedSearch} = useContext(NewsCotext);
   
+  const [multiWord, setMultiWord] = useState<boolean>(false);
+  const [searchTerm, setSearchTerm] = useState<SearchTermType>({
+    keyword: [],
+    from: '',
+    to: '',
+    category: 'general',
+    operator: 'OR'
+  });
+
+  const textRef=useRef<HTMLInputElement>(null);
+  const orRef=useRef<HTMLInputElement>(null);
+  const andRef=useRef<HTMLInputElement>(null);
+  const fromRef=useRef<HTMLInputElement>(null);
+  const toRef=useRef<HTMLInputElement>(null);
+
+
   const selectRef:any=useRef(null)
   const langRef:any=useRef(null)
   const formRef:any=useRef(null)
@@ -38,14 +62,14 @@ function Form() {
   const submitHandler=(e:React.FormEvent<HTMLFormElement>):void =>{
 
     e.preventDefault();
-    setHeadLine(false);
+    // setHeadLine(false);
     let query='';
 
     searchTerm.keyword.forEach((t:string, key:number):void =>{
       key==0? query+=t : query+=` ${searchTerm.operator} ${t}`;
     });
     
-    setDummyArticles(true,5);
+    // setDummyArticles(true,5);
     setDetailedSearch(false);
 
     console.log("text",textRef.current!.value)
