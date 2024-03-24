@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, RefObject } from "react";
 import { NewsCotext } from '../App'
 import DNN from '../../public/dnn.png'
 
@@ -6,15 +6,15 @@ function Header() {
 
   const { runAxios, setDetailedSearch, setSelectedCategory, setHeadLine}=useContext(NewsCotext)
 
-  const H_textRef:any=useRef(null)
+  const H_textRef: RefObject<HTMLInputElement>=useRef<HTMLInputElement>(null)
 
   const searchArticle=(e:React.FormEvent<HTMLFormElement>):void=>{
     e.preventDefault()
     let query='';
-    H_textRef.current.value.split(" ").forEach((t:string, key:number):void =>{
+    H_textRef.current!.value.split(" ").forEach((t:string, key:number):void =>{
       key==0? query+=t : query+=` OR ${t}`;
     });
-    runAxios(0, 'search', 'en', `"${H_textRef.current.value}"`, '', '', true);
+    runAxios(0, 'search', 'en', `"${H_textRef.current!.value}"`, '', '', true);
     setSelectedCategory('')
   }
 

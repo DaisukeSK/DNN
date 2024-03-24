@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useRef, useState, RefObject } from 'react';
 import { NewsCotext } from '../App';
 
 type SearchTermType={
@@ -22,16 +22,15 @@ function Form() {
     operator: 'OR'
   });
 
-  const textRef=useRef<HTMLInputElement>(null);
-  const orRef=useRef<HTMLInputElement>(null);
-  const andRef=useRef<HTMLInputElement>(null);
-  const fromRef=useRef<HTMLInputElement>(null);
-  const toRef=useRef<HTMLInputElement>(null);
+  const textRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
+  const orRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
+  const andRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
+  const fromRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
+  const toRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
 
-
-  const selectRef:any=useRef(null)
-  const langRef:any=useRef(null)
-  const formRef:any=useRef(null)
+  const categoryRef: RefObject<HTMLSelectElement> = useRef<HTMLSelectElement>(null)
+  const langRef: RefObject<HTMLSelectElement> = useRef<HTMLSelectElement>(null)
+  // const formRef:any=useRef(null)
 
   const onchange=(e:React.FormEvent<HTMLFormElement>):void =>{
     const Event=e.target as HTMLFormElement;
@@ -73,9 +72,9 @@ function Form() {
     setDetailedSearch(false);
 
     console.log("text",textRef.current!.value)
-    console.log("lang",langRef.current.value)
-    console.log("selectRef",selectRef.current.value)
-    runAxios(0, selectRef.current.value, langRef.current.value, query, searchTerm.from, searchTerm.to, true);
+    console.log("lang",langRef.current!.value)
+    console.log("categoryRef",categoryRef.current!.value)
+    runAxios(0, categoryRef.current!.value, langRef.current!.value, query, searchTerm.from, searchTerm.to, true);
     
     setSearchTerm({
       keyword: [],
@@ -90,7 +89,7 @@ function Form() {
     <>
       <div className='coverPageBG'></div>
 
-      <form className='detailedSearch' onInput={(e)=>onchange(e)} onSubmit={(e)=>submitHandler(e)} ref={formRef}>
+      <form className='detailedSearch' onInput={(e)=>onchange(e)} onSubmit={(e)=>submitHandler(e)}>
         <div
           className='x'
           onClick={()=>{
@@ -136,7 +135,7 @@ function Form() {
 
 
           <label>Category:&nbsp;</label>
-          <select name='category' ref={selectRef}>
+          <select name='category' ref={categoryRef}>
 
           {[
               "general",

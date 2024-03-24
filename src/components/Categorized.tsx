@@ -28,7 +28,7 @@ function Categorized() {
   selectedCategory=='Science'?'GoldenRod':
   'RoyalBlue'
 
-  const categorySVGs:any={
+  const categorySVGs:{ [key: string]: JSX.Element }={
     'General':<GeneralSVG color={titleColor}/>,
     'Business':<BusinessSVG color={titleColor}/>,
     'Technology':<TechnologySVG color={titleColor}/>,
