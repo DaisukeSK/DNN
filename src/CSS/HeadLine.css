@@ -1,0 +1,543 @@
+hr {
+  border: none;
+  border-bottom: 1px solid rgb(182, 182, 182);
+  margin: 10px 0;
+}
+
+.imgA {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  box-shadow: 2px 2px 7px #000000;
+}
+
+.topStories a, .featured a, .hot a, .trending a, .moreToSee a {
+  text-decoration: none;
+}
+.topStories a:hover, .featured a:hover, .hot a:hover, .trending a:hover, .moreToSee a:hover {
+  text-decoration: underline;
+}
+.topStories > h1, .featured > h1, .hot > h1, .trending > h1, .moreToSee > h1 {
+  font-size: 2rem;
+  background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.topStories > h2, .featured > h2, .hot > h2, .trending > h2, .moreToSee > h2 {
+  background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
+  padding-left: 20px;
+}
+
+.topStories, .featured {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.topStories h2, .topStories h3 {
+  margin: 0;
+}
+.topStories .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.topStories .flex .left {
+  width: 50%;
+}
+.topStories .flex .left a {
+  width: 100%;
+}
+.topStories .flex .left a h2 {
+  margin-top: 5px;
+  font-size: 1.7rem;
+}
+.topStories .flex .left a img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.topStories .flex .right {
+  width: 47%;
+}
+.topStories .flex .right .hidden {
+  display: none;
+}
+.topStories .flex .right hr {
+  margin: 20px 0;
+}
+.topStories .flex .right article {
+  display: flex;
+  align-items: flex-start;
+}
+.topStories .flex .right article .imgA {
+  margin-right: 20px;
+}
+.topStories .flex .right article .imgA img {
+  width: 15vw;
+  aspect-ratio: 1.8/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.topStories .more {
+  margin: 10px 0 20px;
+}
+.topStories .more .button {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #505050;
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.topStories .more .button span {
+  margin: 0 10px;
+}
+.topStories .more .button:hover {
+  background-color: #707070;
+}
+.topStories .more .moreToSee {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+.topStories .more .moreToSee article {
+  border-left: 1px solid rgba(128, 128, 128, 0.349);
+  border-top: 1px solid rgba(128, 128, 128, 0.349);
+  padding: 20px;
+  box-sizing: border-box;
+  width: 25%;
+}
+.topStories .more .moreToSee article:nth-of-type(1), .topStories .more .moreToSee article:nth-of-type(5), .topStories .more .moreToSee article:nth-of-type(9), .topStories .more .moreToSee article:nth-of-type(13) {
+  border-left: none;
+}
+.topStories .more .moreToSee article:nth-of-type(1), .topStories .more .moreToSee article:nth-of-type(2), .topStories .more .moreToSee article:nth-of-type(3), .topStories .more .moreToSee article:nth-of-type(4) {
+  border-top: none;
+}
+.featured {
+  margin-bottom: 30px;
+}
+.featured hr {
+  display: none;
+}
+.featured .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.featured .flex article {
+  width: 23%;
+}
+.featured .flex article .imgA {
+  width: 100%;
+}
+.featured .flex article .imgA img {
+  width: 100%;
+  aspect-ratio: 1.9/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.featured .flex article h2 {
+  margin: 0;
+  margin-top: 10px;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+.pickUp {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.pickUp > div {
+  width: 27%;
+  border: 1px solid rgb(180, 180, 180);
+  box-sizing: border-box;
+}
+.pickUp > div .title {
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  color: rgb(0, 20, 120);
+  background-color: #6163df;
+}
+.pickUp > div .title img {
+  width: 20px;
+  aspect-ratio: 1/1;
+  margin-right: 5px;
+}
+.pickUp > div .title h2 {
+  margin: 0;
+}
+.pickUp > div .title a {
+  margin: 0 0 0 auto;
+  color: rgb(0, 20, 120);
+}
+.pickUp > div .title a svg {
+  fill: rgb(0, 20, 120);
+  margin-right: 5px;
+}
+.pickUp > div article .imgA {
+  box-shadow: none;
+}
+.pickUp > div article .imgA img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.pickUp > div article h2 {
+  font-weight: 100;
+  font-size: 1.2rem;
+  margin: 10px;
+  margin-bottom: 0;
+}
+.pickUp > div article .publishedDate {
+  margin: 0 0 10px 10px;
+}
+
+.hot {
+  margin: 30px 0;
+}
+.hot:hover a h3 {
+  opacity: 1;
+  bottom: 0;
+}
+.hot:hover a h2 {
+  opacity: 1;
+  left: 0;
+}
+.hot a {
+  display: block;
+  position: relative;
+}
+.hot a img {
+  width: 100%;
+  height: 70vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0;
+}
+.hot a h3 {
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.4666666667);
+  transition: all 0.7s;
+}
+.hot a h2 {
+  font-size: 2.7rem;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  color: #ffffff;
+  background: linear-gradient(135deg, red, yellow);
+  padding: 5px 10px;
+  box-sizing: border-box;
+  transition: all 0.7s;
+}
+
+.trending {
+  position: relative;
+  height: 135px;
+  width: 100%;
+  overflow: hidden;
+}
+.trending h2 {
+  height: 35px;
+  margin: 0;
+  padding-left: 4vw;
+  background: none;
+  color: #c00000;
+}
+.trending h2 img {
+  width: 25px;
+}
+.trending .toLeft, .trending .toRight, .trending .toRight_mobile {
+  position: absolute;
+  top: 35px;
+  height: 100px;
+  width: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trending .toLeft img, .trending .toRight img, .trending .toRight_mobile img {
+  width: 50%;
+}
+.trending .toLeft {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.trending .toRight, .trending .toRight_mobile {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+.trending .toRight_mobile {
+  display: none;
+}
+.trending ul li {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  width: 23vw;
+  height: 100px;
+  box-sizing: border-box;
+  border-left: 1px solid rgba(0, 0, 0, 0.3333333333);
+}
+.trending ul li:first-of-type {
+  border: none;
+}
+.trending ul li span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.trending ul li a {
+  margin: 0 10px;
+}
+.trending ul li a img {
+  width: 8vw;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.trending ul li a div {
+  font-size: 0.9rem;
+}
+
+.weatherSection {
+  margin: 0 auto;
+  padding: 20px 0 50px;
+  position: relative;
+}
+.weatherSection::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  z-index: -1;
+}
+.weatherSection::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url(../../public/weather/bluesky.jpg);
+  background-size: cover;
+  z-index: -2;
+}
+.weatherSection h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  background: linear-gradient(to right, rgb(0, 3, 182) 15px, transparent 0%, transparent);
+  padding-left: 20px;
+  margin: 0 auto 10px;
+  color: #ffffff;
+}
+.weatherSection ul {
+  margin: 0 auto;
+  padding: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  list-style: none;
+}
+.weatherSection ul li {
+  width: 120px;
+  margin: 0 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.weatherSection ul li h3 {
+  margin: 0;
+  padding: 5px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3647058824);
+  background-color: #5349df;
+}
+.weatherSection ul li img {
+  width: 100px;
+}
+.weatherSection ul li .desc {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+.weatherSection ul li .temp .maxTemp {
+  color: #c00000;
+  text-shadow: 1px 1px 3px rgba(110, 0, 0, 0.768627451);
+}
+.weatherSection ul li .temp .minTemp {
+  color: #047091;
+  text-shadow: 1px 1px 3px rgba(3, 80, 104, 0.768627451);
+}
+
+@media only screen and (max-width: 500px) {
+  .topStories > h1, .featured > h1, .hot > h1, .trending > h1, .moreToSee > h1 {
+    font-size: 1.8rem;
+    background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
+    margin: 15px 0;
+  }
+  .topStories > h2, .featured > h2, .hot > h2, .trending > h2, .moreToSee > h2 {
+    background: linear-gradient(to right, rgb(221, 0, 0) 10px, transparent 0%, transparent);
+    margin: 15px 0;
+  }
+  .topStories, .featured {
+    width: 90%;
+  }
+  .topStories .flex .left {
+    display: none;
+  }
+  .topStories .flex .right {
+    width: 100%;
+  }
+  .topStories .flex .right .hidden {
+    display: block;
+  }
+  .topStories .flex .right article {
+    display: block;
+  }
+  .topStories .flex .right article .imgA {
+    margin: 0 auto;
+  }
+  .topStories .flex .right article .imgA img {
+    width: 85vw;
+  }
+  .topStories .flex .right article div {
+    margin-top: 5px;
+  }
+  .topStories .more {
+    margin: 20px 0;
+  }
+  .topStories .more .moreToSee {
+    display: block;
+  }
+  .topStories .more .moreToSee article {
+    border: none;
+    border-top: 1px solid rgba(128, 128, 128, 0.349);
+    padding: 10px 0;
+    width: 100%;
+  }
+  .topStories .more .moreToSee article:nth-of-type(2), .topStories .more .moreToSee article:nth-of-type(3), .topStories .more .moreToSee article:nth-of-type(4) {
+    border-top: 1px solid rgba(128, 128, 128, 0.349);
+  }
+  .topStories .more .moreToSee article h3 {
+    font-size: 1rem;
+    font-weight: 100;
+  }
+  .featured hr {
+    display: block;
+    margin: 15px 0;
+  }
+  .featured .flex {
+    display: block;
+  }
+  .featured .flex article {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .featured .flex article .imgA {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .featured .flex article h2 {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  .pickUp {
+    display: block;
+  }
+  .pickUp > div {
+    width: 80%;
+    margin: 0 auto 30px;
+  }
+  .hot a img {
+    height: 100%;
+  }
+  .hot a h3 {
+    opacity: 1;
+    bottom: 0;
+  }
+  .hot a h2 {
+    font-size: 1.5rem;
+    opacity: 1;
+    left: 0;
+    top: 0;
+  }
+  .trending h2 {
+    background: none;
+  }
+  .trending .toLeft, .trending .toRight, .trending .toRight_mobile {
+    width: 14vw;
+  }
+  .trending .toLeft img, .trending .toRight img, .trending .toRight_mobile img {
+    width: 50%;
+  }
+  .trending .toRight {
+    display: none;
+  }
+  .trending .toRight_mobile {
+    display: flex;
+  }
+  .trending ul {
+    margin-left: 8vw;
+  }
+  .trending ul li {
+    width: 80vw;
+  }
+  .trending ul li a img {
+    width: 20vw;
+  }
+  .weatherSection {
+    width: 95%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .weatherSection::after {
+    display: none;
+  }
+  .weatherSection h2 {
+    background: linear-gradient(to right, rgb(0, 3, 182) 10px, transparent 0%, transparent);
+    margin-left: 0;
+    color: #000000;
+  }
+  .weatherSection ul {
+    width: 100%;
+    display: block;
+  }
+  .weatherSection ul li {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  .weatherSection ul li h3 {
+    width: 75px;
+    font-size: 1rem;
+    padding: 0;
+    background-color: transparent;
+  }
+  .weatherSection ul li img {
+    width: 50px;
+  }
+  .weatherSection ul li .desc {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+  .weatherSection ul li .temp {
+    margin: 0 10px 0 auto;
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=HeadLine.css.map */

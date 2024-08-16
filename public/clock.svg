@@ -1,15 +1,109 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="64px" height="64px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
-    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-    <g id="SVGRepo_iconCarrier">
-        <title>clock-filled</title>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="work-case" fill="#555555" transform="translate(42.666667, 42.666667)">
-                <path d="M213.333333,3.55271368e-14 C331.136,3.55271368e-14 426.666667,95.5306667 426.666667,213.333333 C426.666667,331.136 331.136,426.666667 213.333333,426.666667 C95.5306667,426.666667 3.55271368e-14,331.136 3.55271368e-14,213.333333 C3.55271368e-14,95.5306667 95.5306667,3.55271368e-14 213.333333,3.55271368e-14 Z M234.666667,106.666667 L192,106.666667 L192,243.503223 L262.248389,313.751611 L292.418278,283.581722 L234.666667,225.813333 L234.666667,106.666667 Z" id="reading-time">
-                </path>
-            </g>
-        </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="25"
+   height="30"
+   viewBox="0 0 6.6145832 7.9375"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="clock.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="16.761806"
+     inkscape:cx="13.602353"
+     inkscape:cy="9.4858511"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#666666;stroke:#000101;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="rect234"
+       width="6.5339098"
+       height="7.1609979"
+       x="0.040341899"
+       y="0.75588888" />
+    <g
+       id="rect790"
+       transform="matrix(1.0936311,0,0,1.0936311,-0.30966041,-0.31828777)">
+      <path
+         style="color:#000000;fill:#ffffff;stroke-linecap:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+         d="M 1.0976562,0.44322917 V 2.0488281 H 2.3378906 V 0.44322917 Z"
+         id="path12399"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="color:#000000;fill:#666666;stroke-width:0.790356;stroke-linecap:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+         d="M 1.4920018,0.30988571 H 1.9425884 V 1.6545355 H 1.4920018 Z"
+         id="path12401" />
     </g>
+    <g
+       id="rect790-6"
+       transform="matrix(-1.0936311,0,0,1.0936311,-0.30966041,-0.31828777)">
+      <path
+         style="color:#000000;fill:#ffffff;stroke-linecap:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+         d="m -5.5175781,0.44322917 c 0,0.71158853 0,0.89401043 0,1.60559893 h 1.2402344 V 0.44322917 Z"
+         id="path12454"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="color:#000000;fill:#666666;stroke-width:0.790356;stroke-linecap:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+         d="m -5.122582,0.30988583 h 0.4505867 V 1.6545356 H -5.122582 Z"
+         id="path12456" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-weight:bold;font-size:57.8714px;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';fill:#666666;stroke:#ffffff;stroke-width:0.437453;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="2.0704155"
+       y="4.1452293"
+       id="text4893"><tspan
+         sodipodi:role="line"
+         id="tspan4891"
+         style="stroke-width:0.437453"
+         x="2.0704155"
+         y="4.1452293" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-weight:bold;font-size:57.8714px;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';fill:#666666;stroke:#ffffff;stroke-width:0.437453;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="9.943572"
+       y="0.7558884"
+       id="text4897"><tspan
+         sodipodi:role="line"
+         id="tspan4895"
+         style="stroke-width:0.437453"
+         x="9.943572"
+         y="0.7558884" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47227px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="1.3863533"
+       y="6.1006432"
+       id="text4901"><tspan
+         sodipodi:role="line"
+         id="tspan4899"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47227px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+         x="1.3863533"
+         y="6.1006432">30</tspan></text>
+  </g>
 </svg>

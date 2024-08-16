@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+
+<svg
+   width="25"
+   height="20"
+   viewBox="0 -0.5 9.765625 7.8125"
+   fill="none"
+   stroke="#ff0000"
+   stroke-width="0.00025"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="arrow.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="10.821759"
+     inkscape:cx="26.93647"
+     inkscape:cy="9.4254544"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7" />
+  <g
+     id="g6287"
+     transform="translate(0.85165933,0.33971369)"
+     style="fill:#ffffff;fill-opacity:1">
+    <g
+       id="SVGRepo_bgCarrier"
+       stroke-width="0"
+       transform="translate(-4.6685189,-8.0470443)"
+       style="fill:#ffffff;fill-opacity:1" />
+    <g
+       id="SVGRepo_tracerCarrier"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       transform="translate(-4.6685189,-8.0470443)"
+       style="fill:#ffffff;fill-opacity:1" />
+    <circle
+       id="path6000"
+       style="fill:#ffffff;stroke:#0090ff;stroke-width:0.0000976563;fill-opacity:1"
+       cx="2.8145311"
+       cy="3.252708"
+       r="0" />
+    <path
+       id="path6062"
+       style="fill:#ffffff;fill-opacity:1;stroke:#0090ff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="M 4.8202435,-0.49999947 1.2537078,3.0665362 4.8202435,6.6330721 H 3.5665364 L 5.3131813e-7,3.0665362 3.5665364,-0.49999947 Z" />
+    <path
+       id="path6062-4"
+       style="fill:#ffffff;fill-opacity:1;stroke:#0090ff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="M 8.0623058,-0.49999947 4.4957708,3.0665362 8.0623058,6.6330721 H 6.8085981 L 3.242063,3.0665362 6.8085981,-0.49999947 Z" />
+  </g>
+</svg>
