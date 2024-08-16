@@ -2,7 +2,7 @@ import { useState, createContext, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import './CSS/App.css'
-import dummyJson from '../ignore/dummy.json'
+// import dummyJson from '../ignore/dummy.json'
 
 import HeadLine from './Pages/HeadLine/HeadLine.tsx'
 import ArticleList from './Pages/ArticleList.tsx'
@@ -156,8 +156,8 @@ function App() {
     }
 
     const setDummyData=():void=>{
-        setLoading(false)
-        setNews([...dummyJson.data,...dummyJson.data,...dummyJson.data])
+        // setLoading(false)
+        // setNews([...dummyJson.data,...dummyJson.data,...dummyJson.data])
     }
 
     document.body.onclick =(e):void=> {
