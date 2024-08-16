@@ -30,7 +30,7 @@ function App() {
     const [news, setNews] = useState<any>([])
 
     // const apikey1 = [import.meta.env.VITE_APIkey_11, import.meta.env.VITE_APIkey_12, import.meta.env.VITE_APIkey_13]
-    const apikey2 = [import.meta.env.VITE_APIkey_21, import.meta.env.VITE_APIkey_22, import.meta.env.VITE_APIkey_23]
+    const apikey2 = [import.meta.env.VITE_APIkey_1, import.meta.env.VITE_APIkey_2, import.meta.env.VITE_APIkey_3]
 
     const showDate=(d:string)=>{
         const date=new Date(d)
