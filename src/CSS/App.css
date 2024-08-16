@@ -58,13 +58,13 @@ header .search input[type=submit] {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   border-left: none;
-  background: url("../public/search.svg"), #47688f;
+  background: url(../../public/search.svg), #47688f;
   background-size: 20px;
   background-position: center;
   background-repeat: no-repeat;
 }
 header .search input[type=submit]:hover {
-  background: url("../public/search.svg"), #3b5779;
+  background: url(../../public/search.svg), #3b5779;
   background-size: 20px;
   background-position: center;
   background-repeat: no-repeat;

@@ -92,12 +92,12 @@ header {//header styles are in styled components file
             cursor: pointer;
             // background-color: blueviolet;
             border-left: none;
-            background: url('../public/search.svg'), #47688f;
+            background: url(../../public/search.svg), #47688f;
             background-size: 20px;
             background-position: center;
             background-repeat: no-repeat;
             &:hover {
-                background: url('../public/search.svg'), #3b5779;
+                background: url(../../public/search.svg), #3b5779;
                 background-size: 20px;
                 background-position: center;
                 background-repeat: no-repeat;
