@@ -1,65 +1,102 @@
-.category {
-  width: 93%;
+.articleList {
+  width: 90%;
   margin: 0 auto;
 }
-.category .searchResult {
+.articleList .searchResult {
   display: flex;
   align-items: flex-end;
   margin: 30px 0 5px;
 }
-.category .searchResult h2 {
+.articleList .searchResult h2 {
   margin: 0;
   padding-right: 10px;
   border-right: 1px solid rgb(120, 120, 120);
 }
-.category .searchResult h3 {
+.articleList .searchResult h3 {
   margin: 0;
   padding-left: 10px;
 }
-.category hr {
+.articleList hr {
   margin: 0;
 }
-.category article {
-  margin: 0 auto;
+.articleList article {
   padding: 20px;
   box-sizing: border-box;
   transition: all 0.3s;
 }
-.category article:hover {
+.articleList article:hover {
   background-color: rgb(206, 255, 239);
 }
-.category article > a {
+.articleList article > a {
   width: -moz-fit-content;
   width: fit-content;
   display: block;
 }
-.category article > a h2 {
+.articleList article > a h2 {
   margin: 0;
   width: -moz-fit-content;
   width: fit-content;
 }
-.category article > a h2:hover {
+.articleList article > a h2:hover {
   color: navy;
 }
-.category article .flex {
+.articleList article .flex {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
+  align-items: flex-start;
+  margin-top: 10px;
 }
-.category article .flex > div {
+.articleList article .flex > div {
   margin-right: 20px;
 }
-.category article .flex > div h3 {
+.articleList article .flex > div h3 {
   margin: 0;
   color: #222222;
 }
-.category article .flex > div p {
+.articleList article .flex > div p {
   color: #555555;
 }
-.category article .flex a img {
+.articleList article .flex .imgA img {
   width: 25vw;
-  height: 30vh;
+  aspect-ratio: 1.8/1;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+
+@media only screen and (max-width: 500px) {
+  .articleList {
+    width: 100%;
+  }
+  .articleList .searchResult {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .articleList .searchResult h2 {
+    font-size: 1.2rem;
+    padding: 0;
+    border: none;
+  }
+  .articleList .searchResult h3 {
+    font-weight: 100;
+    font-size: 1rem;
+    padding: 0;
+  }
+  .articleList article > a h2 {
+    font-size: 1.2rem;
+  }
+  .articleList article .flex {
+    display: block;
+  }
+  .articleList article .flex > div {
+    display: none;
+  }
+  .articleList article .flex .imgA {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .articleList article .flex .imgA img {
+    width: 100%;
+  }
 }/*# sourceMappingURL=ArticleList.css.map */

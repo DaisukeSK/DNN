@@ -20,7 +20,7 @@ function Trending() {
 
 
                 {news.map((article:any, key:number)=>{
-                    return key>=9 && key<=15 && (
+                    return (key==6 || key==7 || key==8 || key==17 || key==18 || key==27 || key==28) && (
                     <li key={key}>
                         <span>{i++}</span>
                         <a href={article.url} target="_black" className='imgA'>

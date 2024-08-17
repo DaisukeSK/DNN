@@ -39,7 +39,7 @@ function ArticleList() {
 
     return (
         
-        <section className="category">
+        <section className="articleList">
             {
             // location.pathname.split('/')[1]=='category'?
             //     <CategoryH1 category={location.pathname.split('/category/')[1]}>

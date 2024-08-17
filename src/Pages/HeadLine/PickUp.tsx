@@ -11,9 +11,9 @@ function PickUp() {
 
     const { news, showDate, titleCount } = useContext(context)
 
-    const num1:number=11;
-    const num2:number=19;
-    const num3:number=22;
+    const num1:number=5;
+    const num2:number=15;
+    const num3:number=25;
 
     return (
         <section className="pickUp">

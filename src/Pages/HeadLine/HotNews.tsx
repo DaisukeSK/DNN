@@ -10,7 +10,7 @@ function HotNews() {
         <section className="hot">
             
                 {news.map((article:any, key:number)=>{
-                    return key==8 && (
+                    return key==16 && (
                     
                         <a href={article.url} target="_black" key={key}>
                             <img

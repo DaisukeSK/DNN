@@ -60,6 +60,7 @@ export const TrendingUl=Styled.ul<{slide:number}>`
 `;
 
 export const CategoryH1=Styled.h1<{category:string}>`
+    width: fit-content;
     font-size: 2.5rem;
     background: linear-gradient(to right, ${props=>
         props.category=='business'?'#000077':
@@ -71,4 +72,8 @@ export const CategoryH1=Styled.h1<{category:string}>`
     } 20px, transparent 0%, transparent);
     margin: 20px 0;
     padding-left: 25px;
+    @media only screen and (max-width: ${mediaMaxWidth}px) {
+        font-size: 2rem;
+        margin: 20px auto 10px;
+    }
 `;

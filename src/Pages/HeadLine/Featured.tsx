@@ -13,7 +13,7 @@ function Featured(props:{featured?:boolean}) {
             
             <div className="flex">
                 {news.map((article:any, key:number)=>{
-                    return ((props.featured && key>=4 && key<=7)||(!props.featured && key>=16 && key<=19)) && (
+                    return ((props.featured && (key==4 || key==14 || key==24 || key==26))||(!props.featured && (key==9 || key==19 || key==20 || key==29))) && (
 
                         <>
 
@@ -38,7 +38,7 @@ function Featured(props:{featured?:boolean}) {
                         </div>
                     </article>
 
-                    {!(props.featured && key==7) && <hr/>}
+                    {!(props.featured && key==26) && <hr/>}
                         </>
                 )})}
                 

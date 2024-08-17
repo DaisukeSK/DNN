@@ -37,7 +37,7 @@ function TopStory() {
                 <div className="right">
 
                     {news.map((article:any, key:number)=>{
-                        return key<=3 && (
+                        return (key==0 || key==1 || key==10 || key==20) && (
                             <>
                         <article className={key==0 ? 'hidden':undefined} key={key}>
                             <a href={article.url} target="_black" className='imgA'>
@@ -55,7 +55,7 @@ function TopStory() {
                                 </div>
                             </div>
                         </article>
-                        {key!==3 && <hr className={key==0 ? 'hidden':undefined}/>}
+                        {key!==20 && <hr className={key==0 ? 'hidden':undefined}/>}
                         
                             
                             </>
@@ -75,7 +75,7 @@ function TopStory() {
 
                         {/* <div className="flex"> */}
                         {news.map((article:any, key:number)=>{
-                            return ((key>=4 && key<=11)) && (
+                            return (key==2 || key==3 || key==11 || key==12 || key==13 || key==21 || key==22 || key==23) && (
                             <article key={key}>
                                 <a href={article.url} target="_black">
                                     <h3>{titleCount(article.title, 70)}</h3>
