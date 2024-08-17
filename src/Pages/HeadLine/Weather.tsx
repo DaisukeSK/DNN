@@ -54,7 +54,7 @@ function Weather() {
             getWeather(pos.coords.latitude, pos.coords.longitude)
         }
         const fail=(error:any)=>{
-            console.log('error',error.code);
+            console.log('error in weather.tsx',error.code);
             getWeather(49.2503, -123.0569)
         }
         

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { context } from "../../App"
+import { context, NewsArticleType } from "../../App"
 import altImg from '../../../public/dnn.png'
 
 function HotNews() {
@@ -9,7 +9,7 @@ function HotNews() {
     return (
         <section className="hot">
             
-                {news.map((article:any, key:number)=>{
+                {news.map((article:NewsArticleType, key:number)=>{
                     return key==16 && (
                     
                         <a href={article.url} target="_black" key={key}>
@@ -23,7 +23,6 @@ function HotNews() {
                             <h3>{article.title}</h3>
                             <h2>Hot!</h2>
                         </a>
-                    
                 )})}
             
         </section>

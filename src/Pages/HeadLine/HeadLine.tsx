@@ -6,22 +6,13 @@ import PickUp from "./PickUp"
 import Featured from "./Featured"
 import HotNews from "./HotNews"
 import Trending from "./Trending"
-// import MoreToSee from "./MoreToSee"
-
-// import axios from "axios"
-import '../../CSS/HeadLine.css'
 
 function HeadLine() {
 
-    const { 
-        getNews,
-        // setDummyData
-    } = useContext(context)
+    const { getNews } = useContext(context)
 
     useEffect(()=>{
         getNews(0,'')
-        // setDummyData()
-
         window.scrollTo(0,0)
     },[])
 
@@ -35,11 +26,8 @@ function HeadLine() {
             <HotNews/>
             <Trending/>
             <hr/>
-            {/* <hr/> */}
             <Featured/>
             <Weather/>
-            {/* <hr/>
-            <MoreToSee/> */}
         </>
     )
 }

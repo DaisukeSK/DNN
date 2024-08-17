@@ -46,14 +46,14 @@
   align-items: flex-start;
   margin-top: 10px;
 }
-.articleList article .flex > div {
+.articleList article .flex .description {
   margin-right: 20px;
 }
-.articleList article .flex > div h3 {
+.articleList article .flex .description h3 {
   margin: 0;
   color: #222222;
 }
-.articleList article .flex > div p {
+.articleList article .flex .description p {
   color: #555555;
 }
 .articleList article .flex .imgA img {
@@ -89,7 +89,7 @@
   .articleList article .flex {
     display: block;
   }
-  .articleList article .flex > div {
+  .articleList article .flex .description {
     display: none;
   }
   .articleList article .flex .imgA {

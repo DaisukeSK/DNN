@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { context } from "../../App"
+import { context, NewsArticleType } from "../../App"
 import altImg from '../../../public/dnn.png'
 import left from '../../../public/left.svg'
 import right from '../../../public/right.svg'
@@ -18,8 +18,7 @@ function Trending() {
             <h2><img src={flame}/>Tranding</h2>
             <TrendingUl slide={slide}>
 
-
-                {news.map((article:any, key:number)=>{
+                {news.map((article:NewsArticleType, key:number)=>{
                     return (key==6 || key==7 || key==8 || key==17 || key==18 || key==27 || key==28) && (
                     <li key={key}>
                         <span>{i++}</span>
@@ -35,7 +34,6 @@ function Trending() {
                         </a>
                         <a href={article.url} target="_black">
                         <div>{titleCount(article.title, 70)}</div>
-                        {/* <div>{article.title}</div> */}
                             
                         </a>
                     </li>

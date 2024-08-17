@@ -4,7 +4,7 @@ function Unavailable() {
 
     return (
         
-        <section className="unavailable">
+        <section className='unavailable'>
 
             <div className='unavailableFlex'>
                 <img src = {exclamation}/>
