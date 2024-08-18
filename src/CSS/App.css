@@ -269,7 +269,7 @@ footer {
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: rgba(102, 109, 214, 0.8);
-    background-image: url(../public/search.svg);
+    background-image: url(../../public/search.svg);
     background-position: center;
     background-size: 60%;
     background-repeat: no-repeat;
