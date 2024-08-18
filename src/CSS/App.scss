@@ -250,7 +250,7 @@ nav {
 }
 
 .unavailable {
-    width: fit-content;
+    // width: fit-content;
     background-color: rgb(221, 221, 221);
     position: absolute;
     top: 50%;
@@ -278,7 +278,7 @@ nav {
     }
     p {
         font-size: 1.1rem;
-        white-space: nowrap;
+        // white-space: nowrap;
     }
 }
 
@@ -475,7 +475,7 @@ footer {
         }
         p {
             font-size: 1rem;
-            white-space: wrap;
+            // white-space: wrap;
         }
     }
     

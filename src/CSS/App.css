@@ -191,8 +191,6 @@ nav a:hover div {
 }
 
 .unavailable {
-  width: -moz-fit-content;
-  width: fit-content;
   background-color: rgb(221, 221, 221);
   position: absolute;
   top: 50%;
@@ -222,7 +220,6 @@ nav a:hover div {
 }
 .unavailable p {
   font-size: 1.1rem;
-  white-space: nowrap;
 }
 
 footer {
@@ -315,6 +312,5 @@ footer {
   }
   .unavailable p {
     font-size: 1rem;
-    white-space: wrap;
   }
 }/*# sourceMappingURL=App.css.map */
