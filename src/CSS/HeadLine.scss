@@ -1,6 +1,3 @@
-
-
-
 .topStories, .featured, .hot, .trending, .moreToSee {
     a {
         // color: #000000;
@@ -18,8 +15,9 @@
         margin-bottom: 10px;
     }
     &>h2 {
-        background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
-        padding-left: 20px;
+        background: linear-gradient(to right, rgb(221, 0, 0) 11px, transparent 0%, transparent);
+        padding-left: 19px;
+        margin-bottom: 10px;
     }
     
 
@@ -462,7 +460,8 @@
 
                 img {
                     width: 8vw;
-                    height: 70px;
+                    // height: 70px;
+                    aspect-ratio: 1.8/1;
                     object-fit: cover;
                     // display: block;
                 }
@@ -506,8 +505,8 @@
     // height: 2000px;
     h2 {
         width: fit-content;
-        background: linear-gradient(to right, rgb(0, 3, 182) 15px, transparent 0%, transparent);
-        padding-left: 20px;
+        background: linear-gradient(to right, rgb(0, 3, 182) 11px, transparent 0%, transparent);
+        padding-left: 19px;
         margin: 0 auto 10px;
         color: #ffffff;
         // margin-left: 50px;
@@ -533,6 +532,7 @@
             width: 120px;
             margin: 0 10px;
             padding-bottom: 10px;
+            box-shadow: 3px 3px 7px #5e5e5e;
             // background-color: #8fe1fa;
             // background: linear-gradient(#29b3dd,#c8f2ff);
             // background: linear-gradient(#000263,#000129);
@@ -592,14 +592,16 @@
                 }
             }
         }
+
+        
         &>h1 {
             font-size: 1.8rem;
-            background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
-            // padding-left: 25px;
+            background: linear-gradient(to right, rgb(221, 0, 0) 14px, transparent 0%, transparent);
+            padding-left: 23px;
             margin: 15px 0;
         }
         &>h2 {
-            background: linear-gradient(to right, rgb(221, 0, 0) 10px, transparent 0%, transparent);
+            // background: linear-gradient(to right, rgb(221, 0, 0) 10px, transparent 0%, transparent);
             // padding-left: 20px;
             margin: 15px 0;
         }
@@ -943,7 +945,7 @@
 
         // margin: 0 auto;
         h2 {
-            background: linear-gradient(to right, rgb(0, 3, 182) 10px, transparent 0%, transparent);
+            // background: linear-gradient(to right, rgb(0, 3, 182) 10px, transparent 0%, transparent);
             // padding-left: 20px;
             margin-left: 0;
             color: #000000;
@@ -957,6 +959,7 @@
                 width: 100%;
                 margin: 0;
                 margin-bottom: 5px;
+                box-shadow: none;
 
                 display: flex;
                 align-items: center;

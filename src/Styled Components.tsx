@@ -69,10 +69,19 @@ export const CategoryH1=Styled.h1<{category:string}>`
         props.category=='technology'?'#005FCB':
         props.category=='science'?'#CBB900':
         props.category=='health'&&'#0ACB00'
-    } 20px, transparent 0%, transparent);
+    } 19px, transparent 0%, transparent);
     margin: 20px 0;
-    padding-left: 25px;
+    padding-left: 31px;
     @media only screen and (max-width: ${mediaMaxWidth}px) {
+        background: linear-gradient(to right, ${props=>
+            props.category=='business'?'#000077':
+            props.category=='sports'?'#CB2F00':
+            props.category=='entertainment'?'#BA00CB':
+            props.category=='technology'?'#005FCB':
+            props.category=='science'?'#CBB900':
+            props.category=='health'&&'#0ACB00'
+        } 15px, transparent 0%, transparent);
+        padding-left: 25px;
         font-size: 2rem;
         margin: 20px auto 10px;
     }

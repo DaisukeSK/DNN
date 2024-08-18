@@ -277,7 +277,7 @@ nav {
         margin: 10px auto;
     }
     p {
-        font-size: 1.1em;
+        font-size: 1.1rem;
         white-space: nowrap;
     }
 }
@@ -444,6 +444,39 @@ footer {
 
     nav {
         display: none;
+    }
+
+    .unavailable {
+        width: 90%;
+        // background-color: rgb(221, 221, 221);
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        // border-radius: 7px;
+        padding: 10px;
+        // box-sizing: border-box;
+        .unavailableFlex {
+            // display: flex;
+            // align-items: center;
+            // width: fit-content;
+            // margin: 0 auto;
+            img {
+                // width: 30px;
+                // margin-right: 10px;
+            }
+            h2 {
+                // margin: 0;
+            }
+        }
+        hr {
+            // width: 90%;
+            // margin: 10px auto;
+        }
+        p {
+            font-size: 1rem;
+            white-space: wrap;
+        }
     }
     
 }

@@ -33,7 +33,7 @@ function Trending() {
                             
                         </a>
                         <a href={article.url} target="_black">
-                        <div>{titleCount(article.title, 70)}</div>
+                        <div>{titleCount(article.title, 50)}</div>
                             
                         </a>
                     </li>

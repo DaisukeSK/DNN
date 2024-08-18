@@ -9,14 +9,14 @@ import Trending from "./Trending"
 
 function HeadLine() {
 
-    const { getNews } = useContext(context)
+    const { getNews, news } = useContext(context)
 
     useEffect(()=>{
         getNews(0,'')
         window.scrollTo(0,0)
     },[])
 
-    return (
+    return news.length!==0 && (
         <>
             <TopStory/>
             <hr/>

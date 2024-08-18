@@ -4,7 +4,7 @@ import altImg from '../../../public/dnn.png'
 
 function HotNews() {
 
-    const { news } = useContext(context)
+    const { news, titleCount } = useContext(context)
 
     return (
         <section className="hot">
@@ -20,7 +20,7 @@ function HotNews() {
                                     Target.src=altImg
                                 }}
                             />
-                            <h3>{article.title}</h3>
+                            <h3>{titleCount(article.title,100)}</h3>
                             <h2>Hot!</h2>
                         </a>
                 )})}

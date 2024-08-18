@@ -11,8 +11,9 @@
   margin-bottom: 10px;
 }
 .topStories > h2, .featured > h2, .hot > h2, .trending > h2, .moreToSee > h2 {
-  background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
-  padding-left: 20px;
+  background: linear-gradient(to right, rgb(221, 0, 0) 11px, transparent 0%, transparent);
+  padding-left: 19px;
+  margin-bottom: 10px;
 }
 
 .topStories, .featured {
@@ -291,7 +292,7 @@
 }
 .trending ul li a img {
   width: 8vw;
-  height: 70px;
+  aspect-ratio: 1.8/1;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -327,8 +328,8 @@
 .weatherSection h2 {
   width: -moz-fit-content;
   width: fit-content;
-  background: linear-gradient(to right, rgb(0, 3, 182) 15px, transparent 0%, transparent);
-  padding-left: 20px;
+  background: linear-gradient(to right, rgb(0, 3, 182) 11px, transparent 0%, transparent);
+  padding-left: 19px;
   margin: 0 auto 10px;
   color: #ffffff;
 }
@@ -344,6 +345,7 @@
   width: 120px;
   margin: 0 10px;
   padding-bottom: 10px;
+  box-shadow: 3px 3px 7px #5e5e5e;
   text-align: center;
 }
 .weatherSection ul li h3 {
@@ -372,11 +374,11 @@
 @media only screen and (max-width: 500px) {
   .topStories > h1, .featured > h1, .hot > h1, .trending > h1, .moreToSee > h1 {
     font-size: 1.8rem;
-    background: linear-gradient(to right, rgb(221, 0, 0) 15px, transparent 0%, transparent);
+    background: linear-gradient(to right, rgb(221, 0, 0) 14px, transparent 0%, transparent);
+    padding-left: 23px;
     margin: 15px 0;
   }
   .topStories > h2, .featured > h2, .hot > h2, .trending > h2, .moreToSee > h2 {
-    background: linear-gradient(to right, rgb(221, 0, 0) 10px, transparent 0%, transparent);
     margin: 15px 0;
   }
   .topStories, .featured {
@@ -494,7 +496,6 @@
     display: none;
   }
   .weatherSection h2 {
-    background: linear-gradient(to right, rgb(0, 3, 182) 10px, transparent 0%, transparent);
     margin-left: 0;
     color: #000000;
   }
@@ -506,6 +507,7 @@
     width: 100%;
     margin: 0;
     margin-bottom: 5px;
+    box-shadow: none;
     display: flex;
     align-items: center;
     padding: 0;

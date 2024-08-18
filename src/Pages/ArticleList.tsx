@@ -25,7 +25,7 @@ function ArticleList() {
         return firstLetter+str.join('')
     }
 
-    return (
+    return news.length!==0 && (
 
         <section className="articleList">
 

@@ -221,7 +221,7 @@ nav a:hover div {
   margin: 10px auto;
 }
 .unavailable p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   white-space: nowrap;
 }
 
@@ -308,5 +308,13 @@ footer {
   }
   nav {
     display: none;
+  }
+  .unavailable {
+    width: 90%;
+    padding: 10px;
+  }
+  .unavailable p {
+    font-size: 1rem;
+    white-space: wrap;
   }
 }/*# sourceMappingURL=App.css.map */

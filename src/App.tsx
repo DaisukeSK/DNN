@@ -110,7 +110,7 @@ function App() {
                     console.log('Err in loop',n,error)
                     if(n<=1){
                         getNews(n+1,s)
-                    }else{
+                    }else if(n==2 && error.response.status==403){
                         setLoading(false)
                         setUnavailable(true)
                     }
@@ -129,7 +129,7 @@ function App() {
                     console.log('Err in loop',n,error)
                     if(n<=1){
                         getNews(n+1,s)
-                    }else{
+                    }else if(n==2 && error.response.status==403){
                         setLoading(false)
                         setUnavailable(true)
                     }
