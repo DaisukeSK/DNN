@@ -38,6 +38,7 @@ a:not(.logo, nav a, aside a) img {
 a:not(.logo, nav a, aside a):hover img {
   filter: opacity(0.7);
 }
+
 header .logo {
   position: absolute;
   left: 50%;
